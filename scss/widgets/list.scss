@@ -1,0 +1,13 @@
+// styles for the 'clickable list' widget
+
+ul.list {
+	li {
+		cursor: pointer;
+		opacity: 0.7;		// simple hover effect
+
+		&:hover
+		, &.hover {
+			opacity: 1.0;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+// global 'widget' styles
+.widget {
+	padding: $widget-padding;
+	position: relative;
+	overflow: visible;
+
+	// inner widgets have no padding
+	.widget {
+		padding: 0;
+	}
+
+}

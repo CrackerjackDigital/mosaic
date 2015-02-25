@@ -1,0 +1,29 @@
+.expando {
+	ul {
+		overflow-y: auto;
+	}
+	&.closed {
+		h1 {
+			color: transparent;	// hide text when closed
+		}
+		li {
+			height: 0;
+		}
+	}
+	&.open {
+		h1 {
+			padding: 0 1em;
+			color: inherit;
+			display: block;
+		}
+		li {
+			height: 3em;
+		}
+	}
+	.expando {
+		h1 {
+			color: #fff;	// second level and down show always
+			width: auto;
+		}
+	}
+}

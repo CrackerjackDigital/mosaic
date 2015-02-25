@@ -1,0 +1,14 @@
+.widget.sidebar {
+	padding: 0;
+	position: absolute;
+	right: 10px;
+
+	.expando {
+		clear: both;
+
+		 > h1 {
+			text-align: right;
+			cursor: pointer;
+		}
+	}
+}

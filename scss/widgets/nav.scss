@@ -1,0 +1,22 @@
+/*
+ * Navigation element layout
+ */
+
+nav {
+	display: table;
+
+	ul
+	, li {
+		list-style-type: none;
+		display: table-row;
+		overflow: visible;
+	}
+	li {
+		float: left;
+		display: table-cell;
+
+		a {
+			display: block;
+		}
+	}
+}
