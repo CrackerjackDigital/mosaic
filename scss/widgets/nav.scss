@@ -5,6 +5,14 @@
 nav {
 	display: table;
 
+	&.primary {
+		background: $nav-background;
+		color: $nav-color;
+	}
+	&.utility {
+		color: #1a1a1a;
+	}
+
 	ul
 	, li {
 		list-style-type: none;
@@ -12,11 +20,13 @@ nav {
 		overflow: visible;
 	}
 	li {
-		float: left;
 		display: table-cell;
+		line-height: 3em;
+		float: left;
 
 		a {
 			display: block;
+			padding: 0 2em;
 		}
 	}
 }
