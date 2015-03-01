@@ -1,3 +1,5 @@
+@import 'general';
+
 /*
  * Define mosaic layout divisions and containers
  */
@@ -12,7 +14,8 @@ header
 	overflow: hidden;			// we have floated contents.
 
 	// sections are the major layout component which stack left-to-right
-	section {
+	section,
+	{
 		float: left;
 	}
 
