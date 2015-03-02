@@ -13,6 +13,10 @@ header
 	clear: both;
 	overflow: hidden;			// we have floated contents.
 
+	&.tiles {
+		height: 100%;
+	}
+
 	// sections are the major layout component which stack left-to-right
 	section,
 	{
