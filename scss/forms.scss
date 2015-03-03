@@ -1,0 +1,142 @@
+form {
+	/* Button & submit*/
+
+	margin: 0 auto;
+
+	fieldset {
+		border:none;
+		padding: 1em 0 0;
+		margin-bottom: 0;
+		max-width: $fieldset-width;
+	}
+
+	fieldset > div:last-of-type {
+		// remove bottom margin from last field
+		margin-bottom: 0;
+
+		// remove from composite fields too
+		.field:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	.nolabel {
+		div.checkbox{
+			max-width: $input-element-width;
+			float: left;
+		}
+	}
+	.field {
+		margin: $field-container-spacing;
+		width: $field-container-width;
+		clear: both;
+	}
+	// on forms by default we hide the dl's which contain read-only non-editable content
+	dl {
+		display: none;
+	}
+
+	label {
+		white-space: nowrap;
+		overflow: visible;
+		display: inline-block;
+		float: left;
+		margin-right: $label-spacing-right;
+		min-width: $label-width;
+		color: $label-color;
+		font-size: 1em;
+		line-height: 1.2em;
+	}
+	// editable elements
+	input[type=text],
+	input[type=tel],
+	input[type=password],
+	input[type=email],
+	input[type=url],
+	input[type=date],
+	input[type=number],
+	textarea,
+	select
+	{
+		float: left;
+		border: $default-element-border;
+		max-width: $input-element-width;
+		width: 100%;
+		outline: medium none;
+		resize: none;
+		appearance: none;
+		display: inline-block;
+		cursor: pointer;
+		transition: border-color $button-transition-speed;
+
+		-webkit-transition: border-color $button-transition-speed;
+
+		-o-box-sizing: border-box;
+		box-sizing: border-box;
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+
+		&[disabled] {
+			cursor: default;
+			border: $disabled-element-border;
+			max-width: $disabled-element-width;
+		}
+	}
+	textarea {
+		max-width: $textarea-element-width;
+	}
+	select {
+		max-width: $select-element-width;
+	}
+
+	.checkbox {
+		cursor: pointer;
+		input {
+			float: right;
+		}
+		label {
+			float: left;
+			cursor: pointer;
+		}
+	}
+
+
+	// clickable elements
+	input[type=button],
+	input[type=submit],
+	button
+	{
+		cursor: pointer;
+		border: none;
+		padding: 0.5em 1em;
+		border-radius: $button-border-radius;
+	}
+
+	.CompositeField {
+		margin: $field-container-spacing;
+		clear: both;
+	}
+
+	.action-buttons {
+		max-width: $fieldset-width;
+		text-align: right;
+	}
+
+	.select2field{
+		cursor: pointer;
+		text-align: left;
+		display: inline-block;
+		float: left;
+		width: 100%;
+		max-width: $select-element-width;
+	}
+
+	.confirmedpassword {
+		margin-bottom: 0;
+	}
+}
+
+
+
+

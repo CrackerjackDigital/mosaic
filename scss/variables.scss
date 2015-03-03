@@ -1,0 +1,27 @@
+// mosaic variables
+
+$fieldset-width: 100%;
+
+$field-container-width: 100%;
+$field-container-spacing: 0 0 1.5em;
+
+$button-transition-speed: 0.3s;
+$button-border-radius: 2px;
+
+$label-spacing-right: 1em;
+$label-width: 20%;
+$label-color: #000;
+$label-font-size: 0.8em;
+
+$field-element-font-size: 1em;
+$field-element-width: 100%;
+
+	$input-element-width: $field-element-width;
+	$textarea-element-width: $field-element-width;
+	$select-element-width: $field-element-width;
+
+$default-element-border: 1px solid #D9D9D9;
+
+$disabled-element-border: none;
+$disabled-element-width: $field-element-width;
+

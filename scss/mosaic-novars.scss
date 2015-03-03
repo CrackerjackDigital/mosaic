@@ -1,0 +1,10 @@
+/*
+ * import this file to import mosaic excluding variables which you may have predefined
+ * (you will need to define all variables in the mosaic variables file).
+ */
+
+@import 'reset';
+@import 'general';
+@import 'tiles';
+@import 'forms';
+@import 'widgets/all';
