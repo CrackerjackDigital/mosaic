@@ -33,7 +33,8 @@
 	],
 	"extra": {
 		"installer-paths": {
-			"sassy": ["crackerjackdigital/mosaic"]
+			"mosaic": ["crackerjackdigital/mosaic"]
 		}
-	}
+	},
+	"minimum-stability": "dev"
 }
