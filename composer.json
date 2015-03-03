@@ -26,7 +26,7 @@
 				"version": "1.0.0",
 				"dist": {
 					"type": "zip",
-					"url": "https://github.com/postaljs/postal.js/archive/v1.0.0.zip"
+					"url": "https://github.com/postaljs/postal.js/archive/master.zip"
 				}
 			}
 		}
