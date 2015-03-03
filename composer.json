@@ -15,22 +15,8 @@
 		"php": ">=5.3.2",
 		"composer/installers": "*",
 	    "silverstripe/framework": ">=3.0",
-	    "leafo/scssphp": ">=0.0.9",
-		"postaljs/postal.js": "1.0.0"
+	    "leafo/scssphp": ">=0.0.9"
 	},
-	"repositories": [
-		{
-			"type": "package",
-			"package": {
-				"name": "postaljs/postal.js",
-				"version": "1.0.0",
-				"dist": {
-					"type": "zip",
-					"url": "https://github.com/postaljs/postal.js/archive/master.zip"
-				}
-			}
-		}
-	],
 	"extra": {
 		"installer-paths": {
 			"mosaic": ["crackerjackdigital/mosaic"]
