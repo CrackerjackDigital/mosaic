@@ -4,9 +4,8 @@ form {
 	margin: 0 auto;
 
 	fieldset {
-		border:none;
-		padding: 1em 0 0;
-		margin-bottom: 0;
+		border: none;
+		margin: 1em 0;
 		max-width: $fieldset-width;
 	}
 
@@ -58,8 +57,9 @@ form {
 	textarea,
 	select
 	{
+		padding: $editable-element-padding;
 		float: left;
-		border: $default-element-border;
+		border: $element-border;
 		max-width: $input-element-width;
 		width: 100%;
 		outline: medium none;
@@ -88,6 +88,14 @@ form {
 	}
 	select {
 		max-width: $select-element-width;
+		padding: $editable-element-padding;
+		padding-left: 0;
+
+		option {
+			padding: 0;
+			-moz-padding-start: 0;
+			-moz-padding-end: 0;
+		}
 	}
 
 	.checkbox {
@@ -109,8 +117,8 @@ form {
 	{
 		cursor: pointer;
 		border: none;
-		padding: 0.5em 1em;
 		border-radius: $button-border-radius;
+		padding: $clickable-element-padding;
 	}
 
 	.CompositeField {
