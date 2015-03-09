@@ -1,6 +1,35 @@
 // styles for the 'clickable list' widget
 
 ul.list {
+	@mixin title-field {
+		clear: both;
+		display: block;
+		width: 100%;
+		padding: 0;
+
+		label {
+			display: none;
+		}
+
+		input {
+			font-size: $h2-font-size;
+			padding: 0;
+		}
+	}
+	@mixin label-format {
+		font-size: 0.9em;
+		margin-right: 0.5em;
+		color: #999;
+
+		&:after {
+			content: ":"
+		}
+	}
+	@mixin value-format {
+		font-size: 1em;
+		color: #333;
+	}
+
 	li {
 		cursor: pointer;
 		opacity: 0.7;		// simple hover effect
@@ -13,14 +42,50 @@ ul.list {
 		form {
 			margin: 0;
 			padding: 0;
+			cursor: pointer;
 
 			fieldset {
 				margin: 0;
 				padding: 0;
 			}
+
+			div.field {
+				padding: 0;
+				margin: 0 1em 0 0;
+				float: left;
+				display: inline-block;
+				clear: none;
+				width: auto;
+				line-height: 1em;
+
+				&.Title {
+					@include title-field;
+				}
+
+				label {
+					@include label-format;
+				}
+				span {
+					@include value-format;
+				}
+				input {
+					@include value-format;
+					width: auto;
+				}
+				input:not([value]) {
+					visibility: hidden;
+
+					&:after {
+						content: "(none)";
+						display: block;
+					}
+				}
+			}
+
 			.CompositeField {
 				margin-bottom: 0;
 			}
+
 		}
 	}
 }

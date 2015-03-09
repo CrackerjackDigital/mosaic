@@ -30,9 +30,24 @@ form {
 		width: $field-container-width;
 		clear: both;
 	}
-	// on forms by default we hide the dl's which contain read-only non-editable content
-	dl {
-		display: none;
+	&.editable {
+		// if the form is editable then hide the dl's and show the fields
+		dl.field {
+			display: none;
+		}
+		div.field {
+			display: block;
+		}
+	}
+	&.readonly {
+		// if the form is readonly then hide the fields and show.dls
+
+		dl.field {
+			display: block;
+		}
+		div.field {
+			display: none;
+		}
 	}
 
 	label {
