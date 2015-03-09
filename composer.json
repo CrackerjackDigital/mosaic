@@ -20,7 +20,8 @@
 	},
 	"extra": {
 		"installer-paths": {
-			"mosaic": ["crackerjackdigital/mosaic"]
+			"mosaic": ["crackerjackdigital/mosaic"],
+			"mosaic/ckeditor": ["ckeditor/ckeditor"]
 		}
 	},
 	"minimum-stability": "dev"
