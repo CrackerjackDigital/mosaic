@@ -9,6 +9,8 @@
 			} : {
 			};
 
+		console.log(options);
+
 		// add options to options map which may contain tags if tags attribute set.
 		$this.select2(
 			options

@@ -16,6 +16,7 @@ nav {
 		background: $nav-background;
 		color: $nav-color;
 		display: block;
+		z-index: 10000;
 	}
 	&.utility {
 		color: #1a1a1a;
