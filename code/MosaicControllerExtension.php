@@ -15,7 +15,9 @@ class MosaicControllerExtension extends Extension {
             'js/widgets/expando.js',
             'js/widgets/list.js',
             '/components/select2/select2.js',
-            'js/widgets/select2field.js'
+            'js/widgets/select2field.js',
+            'js/lib/ckeditor/ckeditor.js',
+            'js/widgets/ckeditor.js'
         ]
     ];
 
