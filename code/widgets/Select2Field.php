@@ -10,12 +10,6 @@ class Select2Field extends DropdownField {
     private static $library_path = 'components/select2/';
 
     public function Field($properties = array()) {
-        Requirements::javascript(self::$library_path . "select2.js");
-        Requirements::javascript('app/js/components/select2field.js');
-        Requirements::css(self::$library_path . "select2.css");
-
-        Requirements::css('app/css/components.css');
-
         $this->addExtraClass('select2field');
 
         return parent::Field($properties);

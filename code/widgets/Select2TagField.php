@@ -12,12 +12,6 @@ class Select2TagField extends TextField {
     private static $tag_seperator = ',';
 
     public function Field($properties = array()) {
-        Requirements::javascript(self::$library_path . "select2.js");
-        Requirements::javascript(SSViewer::get_theme_folder() . "/javascript/select2field.js");
-        Requirements::css(self::$library_path . "select2.css");
-
-        Requirements::css('app/css/components.css');
-
         $this->addExtraClass('select2field');
         $this->setAttribute('tagseperator', static::tag_seperator());
 

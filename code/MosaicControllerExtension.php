@@ -8,10 +8,13 @@ class MosaicControllerExtension extends Extension {
 
     // what we load and when to load.
     private static $components = [
-        'before' => [],
+        'before' => [
+            '/components/select2/select2.css'
+        ],
         'after' => [
             'js/widgets/expando.js',
             'js/widgets/list.js',
+            '/components/select2/select2.js',
             'js/widgets/select2field.js'
         ]
     ];
@@ -20,31 +23,37 @@ class MosaicControllerExtension extends Extension {
      *  Loads requirements for after main controller init has been called.
      */
     public function onBeforeInit() {
-        $this->addJavascript('before');
+        $this->addRequirements('before');
     }
 
     /**
      *  Loads requirements for after main controller init has been called.
      */
     public function onAfterInit() {
-        $this->addJavascript('after');
+        $this->addRequirements('after');
     }
 
     /**
      * Adds javascript files to requirements based on them ending in '.js' using config.install_dir as base path.
      * @param string $when - look at before or after components.
      */
-    protected function addJavascript($when) {
-        $installDir = self::get_config_setting('install_dir');
+    protected function addRequirements($when) {
+        $installDir = MosaicModule::get_module_path();
 
-        foreach (self::get_config_setting('components', $when) as $relativePath) {
-            if (substr($relativePath, -3, 3) === '.js') {
-                Requirements::javascript(
-                    $this->owner->join_links(
-                        $installDir,
-                        $relativePath
-                    )
+        foreach (self::get_config_setting('components', $when) as $path) {
+            if (substr($path, 0, 1) !== '/') {
+                $path = $this->owner->join_links(
+                    $installDir,
+                    $path
                 );
+            }
+            $path = substr($path, 1);
+
+            if (substr($path, -3, 3) === '.js') {
+                Requirements::javascript($path);
+            }
+            if (substr($path, -4, 4) === '.css') {
+                Requirements::css($path);
             }
         }
 
