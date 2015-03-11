@@ -7,6 +7,9 @@ $field-container-spacing: 0 0 1em;
 
 $button-transition-speed: 0.3s;
 $button-border-radius: 2px;
+$button-border: 1px solid #ccc;
+$button-background: #E18800;
+$button-font-size: 1em;
 
 $label-spacing-right: 1em;
 $label-width: 30%;
@@ -21,6 +24,8 @@ $element-width: 60%;
 	$select-element-width: $element-width;
 
 $element-border: 1px solid #D9D9D9;
+
+$input-border-radius: 2px;
 
 $disabled-element-border: none;
 $disabled-element-width: $element-width;
