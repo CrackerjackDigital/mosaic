@@ -7,3 +7,7 @@ MosaicControllerExtension:
 FileField:
   extensions:
     - FileFieldExtension
+
+Image:
+  extensions:
+    - ImageExtension
