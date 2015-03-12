@@ -18,6 +18,12 @@ form {
 			margin-bottom: 0;
 		}
 	}
+	.error {
+		color: $error-colour!important;
+	}
+	.warning {
+		color: $warning-colour!important;
+	}
 
 	.nolabel {
 		div.checkbox{
