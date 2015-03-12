@@ -1,6 +1,6 @@
-<figure class="gallery-image" $AttributesHTML>
-	<% if Image %>
+<% if $Image %>
+	<figure class="gallery-image" $AttributesHTML>
 		<img src="$Image.Filename" alt=""/>
-	<% end_if %>
-	<figcaption>$Caption</figcaption>
-</figure>
+		<figcaption>$Caption</figcaption>
+	</figure>
+<% end_if %>

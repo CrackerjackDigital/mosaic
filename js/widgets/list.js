@@ -16,7 +16,7 @@
 		console.log('going to ' + href);
 
 		if (href) {
-			window.location.replace(href);
+			window.location.href = (href);
 		}
 	});
 })(jQuery);
