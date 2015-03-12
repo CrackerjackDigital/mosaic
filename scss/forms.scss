@@ -50,6 +50,27 @@ form {
 		}
 	}
 
+	@mixin hide-label {
+		dl, label {
+			display: none;
+		}
+	}
+	// drop down a line and inline the content
+	@mixin inline-fields {
+		clear: left;
+
+		.field {
+			float: left;
+			white-space: nowrap;
+		}
+		dt, dd, label, input {
+			float: left;
+		}
+		dt, label {
+			margin-right: 1em;
+		}
+	}
+
 	label {
 		white-space: nowrap;
 		overflow: visible;
@@ -123,17 +144,31 @@ form {
 			cursor: pointer;
 		}
 	}
-
+	@mixin clickable {
+		cursor: pointer;
+		border: none;
+		border-radius: $clickable-border-radius;
+		padding: $clickable-element-padding;
+		background: $clickable-background;
+		border: $clickable-border;
+		font-size: 1em;
+		font-style: normal;
+		color: #fff;
+		text-shadow: none;
+		box-shadow: none;
+		width: auto;
+		font-weight: normal;
+		z-index: 0;
+		min-height: 100%;
+	}
 
 	// clickable elements
 	input[type=button],
 	input[type=submit],
+	input[type=file],
 	button
 	{
-		cursor: pointer;
-		border: none;
-		border-radius: $button-border-radius;
-		padding: $clickable-element-padding;
+		@include clickable
 	}
 
 	.CompositeField {

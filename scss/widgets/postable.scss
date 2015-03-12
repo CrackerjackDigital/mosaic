@@ -6,7 +6,7 @@
 		width: auto;
 	}
 	&.open {
-		height: 200px;
+		height: 140px;
 	}
 	form {
 		line-height: 5em;
@@ -34,18 +34,19 @@
 						min-width: 100%;
 						font-size: 1.5em;
 						border-radius: $input-border-radius 0px 0px $input-border-radius;
+						padding-right: 50px;
 					}
 				}
 				&.Body {
 					float: left;
-					width: 70%;
+					width: 85%;
 
 					textarea {
 						min-width: 100%;
 					}
 				}
 				&.Images {
-					width: 30%;
+					width: 15%;
 					float: left;
 					clear: none;
 					padding-left: 0em;
@@ -55,39 +56,37 @@
 						height: 50%;
 						border: none;
 						margin: 0;
-						background: $button-background;
+						padding: 0;
 						box-shadow: none;
+						background: none;
 
-						> div {
-							z-index: 0;
-							text-shadow: none;
-							background: none;
-							padding: 0;
-							min-height: 100%;
-						}
-					}
-					.ss-uploadfield-item-uploader {
-						span {
-							display: none;
+						div {
+							@include clickable;
+
+							font-size: 1.2em;
 						}
 					}
 					.ss-uploadfield-fromcomputer {
 						margin-top: 1em;
-						span {
-							display: none;
+
+						div {
+							@include clickable;
 						}
 						input {
+							width: 30px;
 							transform: none;
 							position: static;
 							font-size: 1em;
-							opacity: 1;
+							opacity: 0;				/// we're hiding the actual button
 						}
 					}
 					.ss-uploadfield-item-info {
 						margin: 0;
+						font-size: inherit;
+						font-weight: normal;
 					}
 					.ui-corner-all {
-						border-radius: $button-border-radius;
+						border-radius: 0;
 						border: none;
 					}
 				}
@@ -99,7 +98,7 @@
 		width: auto;
 		float: left;
 		text-align: left;
-		margin: -1px 0 0 -1px;
+		margin: -2px 0 0 -48px;
 
 		input {
 			border-radius: 0px $button-border-radius $button-border-radius 0px;

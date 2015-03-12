@@ -15,38 +15,30 @@
 	<div class="ss-uploadfield-addfile" <% if not $displayInput %>style="display: none;"<% end_if %>>
 		<div class="ss-uploadfield-item-preview ss-uploadfield-dropzone ui-corner-all">
 			<div>
-				<% if $multiple %>
-					<% _t('UploadField.DROPFILES', 'drop files') %>
-				<% else %>
-					<% _t('UploadField.DROPFILE', 'drop a file') %>
-				<% end_if %>
+				<% _t('PostableWidget.DROPFILES', 'Drop') %>
 			</div>
-
 		</div>
-<!--
-		<div class="ss-uploadfield-item-uploader">
-			<span><% _t('AssetUploadField.UPLOADOR', 'OR') %></span>
-		</div>
--->
 		<div class="ss-uploadfield-item-info">
 <!--
 			<label class="ss-uploadfield-item-name">
 				<% if $multiple %>
-					<% _t('UploadField.ATTACHFILES', 'Attach files') %>
+					<% _t('PostableWidget.ATTACHFILES', 'Attach files') %>
 				<% else %>
-					<% _t('UploadField.ATTACHFILE', 'Attach a file') %>
+					<% _t('PostableWidget.ATTACHFILE', 'Attach a file') %>
 				<% end_if %>
 			</label>
 -->
-			<label class="ss-uploadfield-fromcomputer ss-ui-button ui-corner-all" title="<% _t('UploadField.FROMCOMPUTERINFO', 'Upload from your computer') %>" data-icon="drive-upload">
-				<span><% _t('UploadField.FROMCOMPUTER', 'From your computer') %></span>
+			<label class="ss-uploadfield-fromcomputer ss-ui-button ui-corner-all" title="<% _t('PostableWidget.FROMCOMPUTERINFO', 'Upload from your computer') %>" data-icon="drive-upload">
+				<div>
+						<% _t('PostableWidget.FROMCOMPUTER', 'Upload...') %>
+				</div>
 				<input id="$id" name="{$Name}[Uploads][]" class="$extraClass ss-uploadfield-fromcomputer-fileinput" data-config="$configString" type="file"<% if $multiple %> multiple="multiple"<% end_if %> />
 			</label>
 <!--
-			<button class="ss-uploadfield-fromfiles ss-ui-button ui-corner-all" data-icon="network-cloud"><% _t('UploadField.FROMFILES', 'From files') %></button>
+			<button class="ss-uploadfield-fromfiles ss-ui-button ui-corner-all" data-icon="network-cloud"><% _t('PostableWidget.FROMFILES', 'From files') %></button>
 -->
 			<% if not $autoUpload %>
-				<button class="ss-uploadfield-startall ss-ui-button ui-corner-all" title="<% _t('UploadField.STARTALLINFO', 'Start all uploads') %>" data-icon="navigation"><% _t('UploadField.STARTALL', 'Start all') %></button>
+				<button class="ss-uploadfield-startall ss-ui-button ui-corner-all" title="<% _t('PostableWidget.STARTALLINFO', 'Start all uploads') %>" data-icon="navigation"><% _t('PostableWidget.STARTALL', 'Start all') %></button>
 			<% end_if %>
 		</div>
 	</div>
