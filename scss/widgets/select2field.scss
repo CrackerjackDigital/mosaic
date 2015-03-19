@@ -10,6 +10,9 @@
 	.select2-choice {
 		padding: 0 $editable-padding-right 0 $editable-padding-left;
 	}
+	.select2-result-label {
+		font-size: 1.4em;
+	}
 	select.select2 {
 		display: block!important;
 		visibility: hidden;
