@@ -10,11 +10,45 @@ class Select2TagField extends TextField {
     private static $library_path = 'components/select2/';
 
     private static $tag_seperator = ',';
+/*
+    public function __construct($name, $title = null, $source = null, $value = null, $form = null, $emptyString = null) {
+        if (is_null($source)) {
+            $controller = Controller::curr();
+            if ($controller instanceof PublicModelControllerInterface) {
+                $mode = $controller->getMode();
 
-    public function Field($properties = array()) {
+                if ($model = $controller->getModelInstance($mode)) {
+                    $config = $model->config();
+
+                    if ($relatedClass = $model->getRelationClass($name)) {
+                        $title = singleton($relatedClass)->singular_name();
+
+                        if (DataObject::get($relatedClass)->count()) {
+                            $source = DataObject::get($relatedClass)->map()->toArray();
+                        }
+                        if (in_array($name, $config->get('has_many') ?: [])) {
+                            // field name is on remote class pointing to this class ID
+                            $fieldName = $model->class . 'ID';
+                            $value = implode(
+                                self::tag_seperator(),
+                                DataObject::get($relatedClass)->filter([
+                                    $fieldName => $model->ID
+                                ])->map()->toArray()
+                            );
+                        }
+
+                    } else if ($dbObject = $model->dbObject($name)) {
+                        $source = $dbObject->enumValues();
+                    }
+                }
+            }
+        }
+        parent::__construct($name, $title, $source, $value, $form);
         $this->addExtraClass('select2field');
+    }
+*/
+    public function Field($properties = array()) {
         $this->setAttribute('tagseperator', static::tag_seperator());
-
         return parent::Field($properties);
     }
 

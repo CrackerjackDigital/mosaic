@@ -1,5 +1,5 @@
 (function($) {
-	$('.select2field').each( function() {
+	$('select.select2field').each( function() {
 		var $this = $(this),
 			seperator = $this.attr('tagseperator') ? $this.attr('tagseperator') : ',',
 			tags = $this.attr('tags') ? $this.attr('tags').split(seperator) : false,

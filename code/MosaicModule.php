@@ -3,15 +3,17 @@
  * Mosaic Module settings and convenience methods.
  */
 class MosaicModule extends Object {
+    const BeforeInit = 'before';
+    const AfterInit = 'after';
+
     // path mosaic module is installed in relative to site root, no leading '/', trailing OK.
     private static $install_dir;
 
     // what we load and when to load.
     private static $requirements = [
-        'before' => [
-            '/components/select2/select2.css'
+        self::BeforeInit => [
         ],
-        'after' => [
+        self::AfterInit => [
             'js/widgets/expando.js',
             'js/widgets/list.js',
             '/components/select2/select2.js',

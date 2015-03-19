@@ -16,19 +16,29 @@ $label-width: 30%;
 $label-color: #000;
 $label-font-size: 0.8em;
 
-$element-font-size: 1em;
+$editable-font-size: 1em;
 $element-width: 60%;
 
 	$input-element-width: $element-width;
 	$textarea-element-width: $element-width;
 	$select-element-width: $element-width;
 
-$element-border: 1px solid #D9D9D9;
+$editable-border: 1px solid #D9D9D9;
 
 $input-border-radius: 2px;
 
 $disabled-element-border: none;
 $disabled-element-width: $element-width;
 
-$editable-element-padding: 0.2em 0.4em;
-$clickable-element-padding: 0.5em 1em;
+$editable-padding-top: 0.2em;
+$editable-padding-bottom: 0.2em;
+$editable-padding-left: 0.4em;
+$editable-padding-right: 0.4em;
+$editable-padding: $editable-padding-top $editable-padding-right $editable-padding-bottom $editable-padding-left;
+
+$clickable-padding-top: 0.5em;
+$clickable-padding-bottom: 0.5em;
+$clickable-padding-left: 1em;
+$clickable-padding-right: 1em;
+$clickable-padding: $clickable-padding-top $clickable-padding-right $clickable-padding-bottom $clickable-padding-left;
+

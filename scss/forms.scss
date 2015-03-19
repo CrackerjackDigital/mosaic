@@ -35,6 +35,7 @@ form {
 		margin: $field-container-spacing;
 		width: $field-container-width;
 		clear: both;
+		position: relative;
 	}
 	&.editable {
 		// if the form is editable then hide the dl's and show the fields
@@ -99,9 +100,9 @@ form {
 	textarea,
 	select
 	{
-		padding: $editable-element-padding;
+		padding: $editable-padding;
 		float: left;
-		border: $element-border;
+		border: $editable-border;
 		max-width: $input-element-width;
 		width: 100%;
 		outline: medium none;
@@ -110,6 +111,7 @@ form {
 		display: inline-block;
 		cursor: pointer;
 		transition: border-color $button-transition-speed;
+		font-size: $editable-font-size;
 
 		-webkit-transition: border-color $button-transition-speed;
 
@@ -130,7 +132,6 @@ form {
 	}
 	select {
 		max-width: $select-element-width;
-		padding: $editable-element-padding;
 		padding-left: 0;
 
 		option {
@@ -154,7 +155,7 @@ form {
 		cursor: pointer;
 		border: none;
 		border-radius: $clickable-border-radius;
-		padding: $clickable-element-padding;
+		padding: $clickable-padding;
 		background: $clickable-background;
 		border: $clickable-border;
 		font-size: 1em;

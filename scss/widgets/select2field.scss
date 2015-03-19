@@ -1,8 +1,27 @@
-.select2field{
+.select2field
+, .select2-drop
+{
 	cursor: pointer;
 	text-align: left;
-	display: inline-block;
 	float: left;
 	width: 100%;
+	font-size: $editable-font-size;
+
+	.select2-choice {
+		padding: 0 $editable-padding-right 0 $editable-padding-left;
+	}
+	select.select2 {
+		display: block!important;
+		visibility: hidden;
+		z-index: -1;
+		margin-top: -21px;
+	}
+}
+.select2-offscreen,
+.select2-offscreen:focus {
+	// Keep original element in the same spot
+	// So that HTML5 valiation message appear in the correct position
+	left: auto !important;
+	top: auto !important;
 }
 

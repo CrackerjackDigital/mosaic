@@ -1,17 +1,18 @@
 <?php
 
 /**
- * Add back relationships from Image to Organisations and Posts.
+ * Add reverse relationships from Image to Groups, Organisations, Posts.
  */
-class ImageExtension extends DataExtension {
+class ImageExtension extends ModelExtension {
     private static $belongs_many_many = [
+        'Group' => 'GroupModel',
         'Organisation' => 'OrganisationModel',
         'Post' => 'PostModel'
     ];
 
     public function getUploadFields() {
 
-        $fields = $this->owner->getCMSFields();
+        $fields = $this()->getCMSFields();
 
         $fileAttributes = $fields->fieldByName('Root.Main.FilePreview')->fieldByName('FilePreviewData');
         $fileAttributes->push(TextareaField::create('Caption', 'Caption:')->setRows(4));
@@ -39,7 +40,7 @@ class ImageExtension extends DataExtension {
         // check if page return many_many Images when not $table is not a object
         if(is_object($table)) {
             $joinObj = $table::get()
-                ->where("\"{$parentField}\" = '{$page->ID}' AND \"ImageID\" = '{$this->owner->ID}'")
+                ->where("\"{$parentField}\" = '{$page->ID}' AND \"ImageID\" = '{$this()->ID}'")
                 ->first();
 
             return $joinObj->Caption;
