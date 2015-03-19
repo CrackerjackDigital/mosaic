@@ -16,7 +16,7 @@ $label-width: 30%;
 $label-color: #000;
 $label-font-size: 0.8em;
 
-$editable-font-size: 1em;
+$editable-font-size: $content-font-size;
 $element-width: 60%;
 
 	$input-element-width: $element-width;

@@ -145,6 +145,8 @@ form {
 	}
 	textarea {
 		max-width: $textarea-element-width;
+		font-size: $editable-font-size;
+		font-family: $content-font-family;
 	}
 	select {
 		max-width: $select-element-width;
