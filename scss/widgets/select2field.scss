@@ -4,7 +4,10 @@
 	cursor: pointer;
 	text-align: left;
 	float: left;
-	width: 100%;
+
+	.select2-container {
+		width: 60%;
+	}
 
 	.select2-choice {
 		padding: 0 $editable-padding-right 0 0.6em;

@@ -83,6 +83,10 @@ form {
 		}
 		div.field {
 			display: block;
+
+			&.hidden {
+				display: none;
+			}
 		}
 	}
 	&.readonly {
@@ -171,6 +175,7 @@ form {
 		label {
 			float: left;
 			cursor: pointer;
+			font-size: 1em;
 		}
 	}
 

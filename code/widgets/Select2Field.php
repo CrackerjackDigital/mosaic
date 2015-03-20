@@ -25,25 +25,26 @@ class Select2Field extends DropdownField {
                 $mode = $controller->getMode();
 
                 /** @var DataObject $model */
-                if ($model = $controller->getModelInstance($mode)) {
-                    $config = $model->config();
+                if (!$model = $controller->getModelInstance($mode)) {
+                    $model = singleton($controller->getModelClass());
+                }
+                $config = $model->config();
 
-                    $nameNoID = substr($name, -2, 2) === 'ID' ? substr($name, 0, -2) : $name;
+                $nameNoID = substr($name, -2, 2) === 'ID' ? substr($name, 0, -2) : $name;
 
-                    if ($relatedClass = $model->getRelationClass($nameNoID)) {
-                        $title = singleton($relatedClass)->singular_name();
+                if ($relatedClass = $model->getRelationClass($nameNoID)) {
+                    $title = singleton($relatedClass)->singular_name();
 
-                        if (DataObject::get($relatedClass)->count()) {
-                            $source = DataObject::get($relatedClass)->map()->toArray();
-                        }
-                        if (in_array($nameNoID, $config->get('has_one') ?: [])) {
-                            $value = $model->$name;
-                        }
+                    if (DataObject::get($relatedClass)->count()) {
+                        $source = DataObject::get($relatedClass)->map()->toArray();
+                    }
+                    if (in_array($nameNoID, $config->get('has_one') ?: [])) {
+                        $value = $model->$name;
+                    }
 
-                    } else if ($dbObject = $model->dbObject($name)) {
-                        if ($dbObject->hasMethod('enumValues')) {
-                            $source = $dbObject->enumValues();
-                        }
+                } else if ($dbObject = $model->dbObject($name)) {
+                    if ($dbObject->hasMethod('enumValues')) {
+                        $source = $dbObject->enumValues();
                     }
                 }
             }
@@ -53,6 +54,7 @@ class Select2Field extends DropdownField {
     }
     public function setValue($value) {
         // TODO: something!
-//        xdebug_break();
+        xdebug_break();
+        parent::setValue($value);
     }
 }
