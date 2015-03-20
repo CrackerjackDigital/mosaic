@@ -9,12 +9,12 @@ $clickable-transition-speed: 0.3s;
 $clickable-border-radius: 2px;
 $clickable-border: 1px solid transparent;
 $clickable-background: #E18800;
-$clickable-font-size: 1em;
+$clickable-font-size: 1.4em;
 
 $label-spacing-right: 1em;
 $label-width: 30%;
 $label-color: #000;
-$label-font-size: 0.8em;
+$label-font-size: 1.3em;
 
 $editable-font-size: $content-font-size;
 $element-width: 60%;
@@ -23,13 +23,12 @@ $element-width: 60%;
 	$textarea-element-width: $element-width;
 	$select-element-width: $element-width;
 
-$editable-border: 1px solid #D9D9D9;
-
 $input-border-radius: 2px;
 
 $disabled-element-border: none;
 $disabled-element-width: $element-width;
 
+$editable-border: 1px solid #D9D9D9;
 $editable-padding-top: 0.2em;
 $editable-padding-bottom: 0.2em;
 $editable-padding-left: 0.4em;

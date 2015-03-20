@@ -1,0 +1,11 @@
+.field.ckeditorinline {
+	textarea
+	, .cke_textarea_inline
+	{
+		border: $editable-border;
+		min-height: 3em;
+		padding: 0.25em 0.5em;
+		width: 60%;
+		font-size: 1.4em;
+	}
+}

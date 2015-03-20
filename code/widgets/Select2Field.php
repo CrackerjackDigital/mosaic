@@ -52,9 +52,4 @@ class Select2Field extends DropdownField {
         parent::__construct($name, $title, $source, $value, $form);
         $this->addExtraClass('select2field');
     }
-    public function setValue($value) {
-        // TODO: something!
-        xdebug_break();
-        parent::setValue($value);
-    }
 }

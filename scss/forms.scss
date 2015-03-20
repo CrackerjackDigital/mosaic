@@ -12,7 +12,7 @@ form {
 		padding: $clickable-padding;
 		background: $clickable-background;
 		border: $clickable-border;
-		font-size: 1em;
+		font-size: $clickable-font-size;
 		font-style: normal;
 		color: #fff;
 		text-shadow: none;
@@ -22,8 +22,21 @@ form {
 		z-index: 0;
 		min-height: 100%;
 	}
+	@mixin field-label {
+		white-space: nowrap;
+		overflow: visible;
+		display: inline-block;
+		float: left;
+		margin-right: $label-spacing-right;
+		min-width: $label-width;
+		color: $label-color;
+		font-size: $label-font-size;
+		line-height: 2em;
+		border-bottom: 1px dotted #eee;
+	}
 	@mixin hide-label {
-		dl, label {
+		dt
+		, label {
 			display: none;
 		}
 	}
@@ -75,6 +88,12 @@ form {
 		width: $field-container-width;
 		clear: both;
 		position: relative;
+
+		label
+		, dt
+		{
+			@include field-label;
+		}
 	}
 	&.editable {
 		// if the form is editable then hide the dl's and show the fields
@@ -100,19 +119,6 @@ form {
 		}
 	}
 
-
-
-	label {
-		white-space: nowrap;
-		overflow: visible;
-		display: inline-block;
-		float: left;
-		margin-right: $label-spacing-right;
-		min-width: $label-width;
-		color: $label-color;
-		font-size: 1em;
-		line-height: 1.2em;
-	}
 	// editable elements
 	input[type=text],
 	input[type=tel],

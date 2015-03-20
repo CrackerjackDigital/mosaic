@@ -48,6 +48,7 @@ class Select2TagField extends TextField {
     }
 */
     public function Field($properties = array()) {
+        $this->addExtraClass('select2field');
         $this->setAttribute('tagseperator', static::tag_seperator());
         return parent::Field($properties);
     }
