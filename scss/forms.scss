@@ -1,5 +1,9 @@
+article form {
+	font-size: 0.7em;
+}
 form {
 	margin: 0 auto;
+	font-size: 1em;
 
 	@mixin clickable {
 		cursor: pointer;
@@ -68,7 +72,7 @@ form {
 	}
 	.field {
 		margin: $field-container-spacing;
-		width: $field-container-width;
+		width: auto;
 		clear: both;
 		position: relative;
 	}

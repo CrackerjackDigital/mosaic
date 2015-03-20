@@ -1,5 +1,5 @@
 <% if $Filename %>
-	<figure>
+	<figure class="image $AttributesHTML">
 		<img src="$Filename" alt=""/>
 		<figcaption>$Title</figcaption>
 	</figure>
