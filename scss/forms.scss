@@ -72,7 +72,7 @@ form {
 	}
 	.field {
 		margin: $field-container-spacing;
-		width: auto;
+		width: $field-container-width;
 		clear: both;
 		position: relative;
 	}

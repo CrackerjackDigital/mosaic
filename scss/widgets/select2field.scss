@@ -5,19 +5,22 @@
 	text-align: left;
 	float: left;
 	width: 100%;
-	font-size: $editable-font-size;
 
 	.select2-choice {
-		padding: 0 $editable-padding-right 0 $editable-padding-left;
+		padding: 0 $editable-padding-right 0 0.6em;
+		font-size: 1em;
 	}
 	.select2-result-label {
-		font-size: 1.4em;
+		font-size: $editable-font-size;
+	}
+	.select2-chosen {
+		font-size: $editable-font-size;
 	}
 	select.select2 {
 		display: block!important;
 		visibility: hidden;
 		z-index: -1;
-		margin-top: -21px;
+		margin-top: -2em;
 	}
 }
 .select2-offscreen,
