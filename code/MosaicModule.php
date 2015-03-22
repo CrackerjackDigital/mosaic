@@ -9,19 +9,11 @@ class MosaicModule extends Object {
     // path mosaic module is installed in relative to site root, no leading '/', trailing OK.
     private static $install_dir;
 
-    // what we load and when to load.
+    // what we load and when to load, from requirements.yml
     private static $requirements = [
         self::BeforeInit => [
         ],
         self::AfterInit => [
-            'js/widgets/expando.js',
-            'js/widgets/list.js',
-            '/components/select2/select2.js',
-            'js/widgets/select2field.js',
-            'js/lib/ckeditor/ckeditor.js',
-            'js/widgets/ckeditor.js',
-            'js/widgets/confirmedpasswordfield.js',
-            'js/widgets/postable.js'
         ]
     ];
 
@@ -32,7 +24,8 @@ class MosaicModule extends Object {
     public static function add_requirements($when) {
         $installDir = self::get_module_path();
 
-        foreach (self::get_config_setting('requirements', $when) as $path) {
+        $requirements = self::get_config_setting('requirements', $when);
+        foreach ($requirements as $path) {
             if (substr($path, 0, 1) !== '/') {
                 $path = Controller::join_links(
                     $installDir,
@@ -63,7 +56,7 @@ class MosaicModule extends Object {
     public static function get_config_setting($varName, $key = null) {
         $setting = Config::inst()->get(get_called_class(), $varName);
         if ($key && is_array($setting)) {
-            return $setting[$key];
+            return $setting[$key] ?: [];
         }
         return $setting;
     }

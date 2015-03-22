@@ -1,0 +1,20 @@
+---
+Name: mosaic-requirements
+---
+
+MosaicModule:
+  requirements:
+    before:
+    after:
+      - /components/select2/select2.js
+      - /components/masonry/masonry.pkgd.min.js
+      - js/lib/ckeditor/ckeditor.js
+      - js/widgets/expando.js
+      - js/widgets/list.js
+      - js/widgets/actionlinks.js
+      - js/widgets/select2field.js
+      - js/widgets/ckeditor.js
+      - js/widgets/confirmedpasswordfield.js
+      - js/widgets/postable.js
+
+

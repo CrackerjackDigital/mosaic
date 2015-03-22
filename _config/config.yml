@@ -1,8 +1,6 @@
 ---
 Name: mosaic-config
 ---
-MosaicControllerExtension:
-  install_dir: 'mosaic/'
 
 FileField:
   extensions:
