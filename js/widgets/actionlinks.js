@@ -29,7 +29,9 @@
 			.off('click', 'li[data-link-type="nav"] a')
 			.on('click', 'li[data-link-type="nav"] a', false);
 
-		$item.addClass('busy');
+		$('menu.action-links li[data-link-type="nav"]').addClass('busy');
+
+		$item.addClass('busy active');
 
 		$.when(
 				$.ajax(data.doit)
@@ -40,14 +42,21 @@
 
 					$item.data('action', data.reverse);
 					$item.data('reverse', data.action);
+					$item.data('reverseTitle', data.title);
+					$item.data('title', data.reverseTitle);
 					$item.data('doit', data.undoit);
 					$item.data('undoit', data.doit);
 
 					// switch the action class and remove the busy
 					$item.removeClass(data.action + ' ' + data.reverse)
 						.addClass($item.data('action'))
-						.removeClass('busy');
+						.removeClass('busy active');
 
+					// now set the anchor title
+					$('a', $item).attr('title', data.title);
+
+
+					$('menu.action-links li[data-link-type="nav"]').removeClass('busy');
 				},
 				// fail
 				function (result, statusText, jqXHR) {

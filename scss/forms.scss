@@ -5,56 +5,6 @@ form {
 	margin: 0 auto;
 	font-size: 1em;
 
-	@mixin clickable {
-		cursor: pointer;
-		border: none;
-		border-radius: $clickable-border-radius;
-		padding: $clickable-padding;
-		background: $clickable-background;
-		border: $clickable-border;
-		font-size: $clickable-font-size;
-		font-style: normal;
-		color: #fff;
-		text-shadow: none;
-		box-shadow: none;
-		width: auto;
-		font-weight: normal;
-		z-index: 0;
-		min-height: 100%;
-	}
-	@mixin field-label {
-		white-space: nowrap;
-		overflow: visible;
-		display: inline-block;
-		float: left;
-		margin-right: $label-spacing-right;
-		min-width: $label-width;
-		color: $label-color;
-		font-size: $label-font-size;
-		line-height: 2em;
-		border-bottom: 1px dotted #eee;
-	}
-	@mixin hide-label {
-		dt
-		, label {
-			display: none;
-		}
-	}
-	// drop down a line and inline the content
-	@mixin inline-fields {
-		clear: left;
-
-		.field {
-			float: left;
-			white-space: nowrap;
-		}
-		dt, dd, label, input {
-			float: left;
-		}
-		dt, label {
-			margin-right: 1em;
-		}
-	}
 	fieldset {
 		border: none;
 		margin: 1em 0;
