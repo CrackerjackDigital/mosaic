@@ -43,11 +43,10 @@
 					$item.data('doit', data.undoit);
 					$item.data('undoit', data.doit);
 
-					$item.removeClass(data.action + ' ' + data.reverse);
-					// this has been changed above
-					$item.addClass($item.data('action'));
-
-					$item.removeClass('busy');
+					// switch the action class and remove the busy
+					$item.removeClass(data.action + ' ' + data.reverse)
+						.addClass($item.data('action'))
+						.removeClass('busy');
 
 				},
 				// fail
