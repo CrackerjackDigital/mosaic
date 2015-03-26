@@ -1,5 +1,6 @@
 .field.ckeditorinline {
 	textarea
+	, > div
 	, .cke_textarea_inline
 	{
 		border: $editable-border;
@@ -7,5 +8,10 @@
 		padding: 0.25em 0.5em;
 		width: 60%;
 		font-size: 1.4em;
+		-webkit-user-select: text;
+		-khtml-user-select: text;
+		-moz-user-select: text;
+		-ms-user-select: text;
+		user-select: text;
 	}
 }

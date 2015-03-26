@@ -10,24 +10,26 @@
 	dd
 	{
 		font-size: 1.6em;
+		line-height: 1.8em;
 		padding: 0;
 		width: 100%;
 		max-width: none;
 	}
 }
 @mixin label-field {
-	font-size: 0.9em;
+	font-size: 1.2em;
+	line-height: 1.4em;
 	margin-right: 0.5em;
 	color: #999;
 	padding-bottom: 0.2em;
 }
 @mixin value-field {
-	font-size: 1em;
+	font-size: 1.3em;
+	line-height: 1.4em;
 	color: #333;
 	padding: 0;
 }
 @mixin hide-labels {
-	// this should be in mosaic.
 	dt, label {
 		display: none;
 	}
@@ -62,12 +64,6 @@
 	line-height: 2em;
 	border-bottom: 1px dotted #eee;
 }
-@mixin hide-label {
-	dt
-	, label {
-		display: none;
-	}
-}
 // drop down a line and inline the content
 @mixin inline-fields {
 	clear: left;
@@ -82,4 +78,27 @@
 	dt, label {
 		margin-right: 1em;
 	}
+}
+@mixin hide-placeholder {
+	// used to hide placeholder text, e.g. if an input is disabled
+	&::-webkit-input-placeholder {
+		color: transparent;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		color: transparent;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		color: transparent;
+	}
+
+	&:-ms-input-placeholder {
+		color: transparent;
+	}
+
+	&::input-placeholder {
+		color: transparent;
+	}
+
 }

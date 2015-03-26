@@ -1,3 +1,3 @@
-<textarea class="typography ckeditorinlineedit" $AttributesHTML>
+<div contenteditable="true" class="typography ckeditorinlineedit" $AttributesHTML>
 	$Value
-</textarea>
+</div>

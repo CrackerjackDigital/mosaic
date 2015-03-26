@@ -1,11 +1,6 @@
 <% if $IncludeFormTag %>
 	<form $AttributesHTML>
 <% end_if %>
-<% if $Message %>
-		<p id="{$FormName}_error" class="message $MessageType">$Message</p>
-<% else %>
-		<p id="{$FormName}_error" class="message $MessageType" style="display: none"></p>
-<% end_if %>
 
 	<fieldset>
 		<% if $Legend %><legend>$Legend</legend><% end_if %>
@@ -13,6 +8,12 @@
 			$FieldHolder
 		<% end_loop %>
 	</fieldset>
+
+<% if $Message %>
+		<p id="{$FormName}_error" class="message $MessageType">$Message</p>
+<% else %>
+		<p id="{$FormName}_error" class="message $MessageType" style="display: none"></p>
+<% end_if %>
 
 <% if $Actions %>
 	<div class="action-buttons">

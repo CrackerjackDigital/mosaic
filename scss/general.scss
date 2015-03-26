@@ -22,3 +22,18 @@
 a {
 	text-decoration: none;
 }
+
+p.message {
+	width: 100%;
+	font-size: 1.2em;
+	padding: 0.5em 2em;
+	text-align: center;
+	border-radius: 0.5em;
+
+	&.good {
+		background-color: #aadd00;
+		color: #fff;
+
+	}
+
+}

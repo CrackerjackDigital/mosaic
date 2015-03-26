@@ -1,9 +1,9 @@
 (function() {
 	console.log('ckeditor');
 
-//	CKEDITOR.disableAutoInline = true;
+	//CKEDITOR.disableAutoInline = true;
 
-	$('textarea.ckeditorinlineedit').each( function() {
+	$('.ckeditorinlineedit').each( function() {
 		CKEDITOR.inline(this,
 			{
 				// Define the toolbar groups as it is a more accessible solution.

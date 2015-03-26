@@ -102,9 +102,10 @@ form {
 		-moz-appearance: none;
 
 		&[disabled] {
+			@include hide-placeholder;
+
 			cursor: default;
 			border: $disabled-element-border;
-			max-width: $disabled-element-width;
 		}
 	}
 	textarea {

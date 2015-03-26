@@ -2,7 +2,6 @@
 
 ul.list {
 
-
 	li {
 		cursor: pointer;
 
@@ -26,10 +25,6 @@ ul.list {
 				width: auto;
 				line-height: 1em;
 
-				&.Title {
-					@include title-field;
-				}
-
 				label {
 					@include label-field;
 				}
@@ -49,19 +44,17 @@ ul.list {
 					}
 				}
 			}
-			&.readonly {
-				div.field
-				, dl.field
-				{
-					&.Title {
-						label,
-						dt {
-							display: none;
-						}
-					}
+			// when we are in a list we always show field dl's not field divs
+			&.editable
+			, &.readonly
+			{
+				dl.field {
+					display: block;
+				}
+				div.field {
+					display: none;
 				}
 			}
-
 
 
 			.CompositeField {

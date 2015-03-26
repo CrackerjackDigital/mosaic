@@ -17,7 +17,8 @@
 	    "silverstripe/framework": ">=3.0",
 	    "leafo/scssphp": ">=0.0.9",
 		"components/font-awesome": "4.3.*@dev",
-		"components/masonry": "3.2.2"
+		"components/masonry": "3.2.2",
+		"postal/postaljs":
 	},
 	"extra": {
 		"installer-paths": {
