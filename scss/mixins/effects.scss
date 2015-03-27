@@ -1,0 +1,23 @@
+@mixin ui-box-shadow {
+	-webkit-box-shadow: 3px 4px 13px 0px rgba(173,173,173,1);
+	-moz-box-shadow: 3px 4px 13px 0px rgba(173,173,173,1);
+	box-shadow: 3px 4px 13px 0px rgba(173,173,173,1);
+}
+@mixin busy-active($colour) {
+	&.busy {
+		a {
+			cursor: default;
+
+			&:before {
+				color: $colour;
+			}
+		}
+		&.active {
+			a {
+				&:before {
+					content: $fa-var-spinner;
+				}
+			}
+		}
+	}
+}

@@ -143,7 +143,13 @@ form {
 	input[type=file],
 	button
 	{
-		@include clickable
+		@include clickable;
+
+		&.busy {
+			opacity: 0.3;
+			cursor: default;
+		}
+
 	}
 
 	.CompositeField {

@@ -1,7 +1,7 @@
 <% if isDisabled %>
 <dl class="field $extraClass $Name">
 	<dt><% if $RightTitle %>$RightTitle<% else %>$Title<% end_if %></dt>
-	<dd>$Value</dd>
+	<dd><% if $HasDisplayValue %>$DisplayValue<% else %>$Value<% end_if %></dd>
 </dl>
 <% end_if %>
 <div id="$Name" class="field $extraClass">

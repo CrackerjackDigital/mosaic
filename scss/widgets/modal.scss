@@ -1,0 +1,61 @@
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	right: 0;
+
+	&.closed {
+		display: none;
+		height: 0;
+	}
+	&.open {
+		display: block;
+	}
+	.overlay {
+		position: fixed;
+		min-width: 100%;
+		min-height: 100%;
+		background: $overlay-background;
+	}
+	.modal-body {
+		position: absolute;
+		left: 50%;
+		margin: 0 auto;
+		margin-left: -25%;
+		z-index: 200;
+		background: #fff;
+		border: 1px solid #999;
+		padding: 2em;
+
+		@include ui-box-shadow;
+
+		input {
+			width: 100%!important;
+		}
+
+		&.fixed-top {
+			position: fixed;
+		}
+
+		&.min {
+			min-width: 320px;
+		}
+		&.max {
+			max-width: 50%;
+		}
+		a.close {
+			color: transparent;
+
+			&:before {
+				@include glyph-font;
+
+				color: #999;
+				content: $fa-var-close;
+			}
+		}
+
+	}
+}

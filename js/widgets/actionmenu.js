@@ -6,14 +6,23 @@
 	(function (channel) {
 		console.log('action-menu initialising');
 
+		// lifecycle and outcomes of clicking an action-menu item
 		channel.subscribe('action-menu.bind', bind);
 		channel.subscribe('action-menu.clicked', clicked);
 		channel.subscribe('action-menu.busy', busy);
 		channel.subscribe('action-menu.success', success);
 		channel.subscribe('action-menu.error', error);
 		channel.subscribe('action-menu.done', done);
+
+		// specific handlers for the item clicked
 		channel.subscribe('action-menu.inplace', inplace);
 		channel.subscribe('action-menu.modal', modal);
+
+		// also handle ui channel message when modal closed to revert links etc
+		$.messageBus.ui.subscribe('modal.ok', success);
+		$.messageBus.ui.subscribe('modal.cancel', done);
+		$.messageBus.ui.subscribe('modal.error', error);
+
 
 		channel.publish(
 			'action-menu.bind',
@@ -34,10 +43,8 @@
 			});
 		});
 	}
+	// item clicked, make busy and trigger handler
 	function clicked(message) {
-		var listItem = message.listItem,
-			data = listItem.data();
-
 		channel.publish(
 			'action-menu.busy',
 			message    // forward message
@@ -47,6 +54,7 @@
 			message // forward message to handler
 		)
 	}
+	// disable all action menu items
 	function busy(message) {
 		// rebind with a 'false' click handler so other actions aren't allowed
 		$('menu.action-menu')
@@ -59,6 +67,7 @@
 		// make the clicked action active
 		message.listItem.addClass('busy active');
 	}
+	// update item in place then done.
 	function success(message) {
 		console.log('success ' + message.statusText);
 
@@ -82,49 +91,53 @@
 			}
 		);
 
+		// switch the action class and remove the .busy.active
+		listItem.removeClass(data.action + ' ' + data.reverse)
+			.addClass(listItem.data('action'));
+
 		// now set the anchor title from the updated listitem data
 		$('a', listItem).attr('title', listItem.data('title'));
 
 		// set child span to new action if we are an action button
 		$('span', listItem).html(listItem.data('title'));
 
-		$('menu.action-menu li').removeClass('busy active');
-
-		// switch the action class and remove the .busy.active
-		listItem.removeClass(data.action + ' ' + data.reverse)
-			.addClass(listItem.data('action'));
+		done(message);
 	}
+	// add error indicators then done.
 	function error(message) {
-		var listItem = message.listItem;
+		console.log('got error');
 
-		$('menu.action-menu li').removeClass('busy active');
+		// add an error class to the list item
+		message.listItem.addClass('error');
 
-		// remove the .busy.active and add an error
-		listItem.addClass('error');
+		done(message);
 	}
+	// remove busy indicators and fire a rebind
 	function done(message) {
-		var data = message.listItem.data();
+		$('menu.action-menu li').removeClass('busy active');
 
 		// unbind false handler from click
 		$('menu.action-menu').off('click', 'li a');
 
-		channel.publish(
-			'action-menu.bind',     // rebind
-			message     // forward message
-		);
+		// rebind the controls
+		channel.publish('action-menu.bind', {});
 	}
 
 	function modal(message) {
 		var listItem = message.listItem,
-			event = message.event;
+			event = message.event,
+			srcURI = listItem.data('doit') + '/modal';
+
+		console.log('loading modal from ' + srcURI);
 
 		event.preventDefault();
 
 		$.when(
-			$.ajax(listItem.data('doit') + '/modal')
+			$.ajax(srcURI)
 		).then(
 			// success
 			function (result, statusText) {
+				console.log('got result for modal, showing');
 				$.messageBus.ui.publish(
 					'modal.show',
 					$.extend(
@@ -138,6 +151,11 @@
 			},
 			// fail
 			function (result, statusText) {
+				console.log('failed to get result');
+				$.messageBus.ui.publish(
+					'modal.hide'
+				);
+
 				channel.publish(
 					'action-menu.error',
 					$.extend(
@@ -189,26 +207,9 @@
 					)
 				);
 			}
-		).done(
-			function () {
-				channel.publish(
-					'action-menu.done',
-					{
-						listItem: listItem
-					}
-				);
-			}
-		);
+		)
 	}
-	// handle popping up a modal with data from server
-	function modal(message) {
-		var event = message.event,
-			listItem = message.listItem;
 
-		event.preventDefault();
-
-		return false;
-	}
 	function nav() {
 		return true;
 	}

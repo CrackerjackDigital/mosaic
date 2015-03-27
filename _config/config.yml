@@ -4,8 +4,16 @@ Name: mosaic-config
 
 FileField:
   extensions:
-    - FileFieldExtension
+    - MosaicFileFieldExtension
 
 Image:
   extensions:
-    - ImageExtension
+    - MosaicImageExtension
+
+DropdownField:
+  extensions:
+    - MosaicDropdownFieldExtension
+
+TextareaField:
+  extensions:
+    - MosaicTextareaFieldExtension
