@@ -5,7 +5,7 @@ Name: mosaic-requirements
 MosaicModule:
   requirements:
     before:
-      - lib/fotorama/fotorama.css
+      - lib/fotorama/fotorama.css 
     after:
       - /components/select2/select2.js
       - /components/masonry/masonry.pkgd.min.js
@@ -13,7 +13,6 @@ MosaicModule:
       - lib/postaljs/postal.min.js
       - lib/ckeditor/ckeditor.js
       - lib/fotorama/fotorama.js
-      - lib/dropzone/dropzone.js
       - js/message-bus.js
       - js/widgets/sidebar.js
       - js/widgets/expando.js
@@ -24,6 +23,7 @@ MosaicModule:
       - js/widgets/ckeditor.js
       - js/widgets/confirmedpasswordfield.js
       - js/widgets/postable.js
+      - js/widgets/filedropzone.js
       - js/widgets/modal.js
 
 

@@ -6,7 +6,7 @@
 		width: auto;
 	}
 	&.open {
-		height: 140px;
+		height: auto;
 	}
 	form {
 		line-height: 5em;
@@ -45,7 +45,7 @@
 					}
 				}
 				&.Images {
-					width: 15%;
+					width: 100%;
 					float: left;
 					clear: none;
 					padding-left: 0em;
