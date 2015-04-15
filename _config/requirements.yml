@@ -13,6 +13,7 @@ MosaicModule:
       - lib/postaljs/postal.min.js
       - lib/ckeditor/ckeditor.js
       - lib/fotorama/fotorama.js
+      - lib/dropzone/dropzone.js
       - js/message-bus.js
       - js/widgets/sidebar.js
       - js/widgets/expando.js
