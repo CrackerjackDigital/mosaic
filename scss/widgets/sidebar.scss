@@ -1,7 +1,8 @@
 .widget.sidebar {
 	padding: 0;
-	position: fixed;
-	right: 10px;
+	position: absolute;
+	right: 0px;
+	top: 400px;
 
 	.expando {
 		clear: both;
