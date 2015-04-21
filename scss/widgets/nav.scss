@@ -17,6 +17,7 @@ nav {
 		color: $nav-color;
 		display: block;
 		z-index: 10000;
+		text-transform: uppercase;
 	}
 	&.utility {
 		color: #1a1a1a;
@@ -27,6 +28,7 @@ nav {
 		list-style-type: none;
 		display: table;
 		overflow: visible;
+
 	}
 	ul {
 		li {
@@ -38,6 +40,11 @@ nav {
 				display: block;
 				padding: 0 2em;
 			}
+			&:first-child{
+			a{
+				padding-left:0px;
+			}
+		}
 		}
 	}
 }
