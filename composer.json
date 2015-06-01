@@ -19,10 +19,5 @@
 		"components/font-awesome": "4.3.*@dev",
 		"components/masonry": "3.2.2"
 	},
-	"extra": {
-		"installer-paths": {
-			"mosaic": ["crackerjackdigital/mosaic"]
-		}
-	},
 	"minimum-stability": "dev"
 }
