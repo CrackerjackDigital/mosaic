@@ -6,6 +6,8 @@
  */
 
 class Select2Field extends DropdownField {
+    const CSSClass = 'select2field';
+
     // this is default library install path with composer
     private static $library_path = 'components/select2/';
 
@@ -21,7 +23,7 @@ class Select2Field extends DropdownField {
     public function __construct($name, $title = null, $source = null, $value = null, $form = null, $emptyString = null) {
         if (is_null($source)) {
             $controller = Controller::curr();
-            if ($controller instanceof PublicModelControllerInterface) {
+            if ($controller instanceof SocialModelControllerInterface) {
                 $mode = $controller->getMode();
 
                 /** @var DataObject $model */
@@ -50,6 +52,7 @@ class Select2Field extends DropdownField {
             }
         }
         parent::__construct($name, $title, $source, $value, $form);
-        $this->addExtraClass('select2field');
+
+        $this->addExtraClass(static::CSSClass);
     }
 }
