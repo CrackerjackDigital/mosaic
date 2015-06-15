@@ -2,9 +2,7 @@
 	$.fn.select2ify = function(container) {
 		container = container || $(document);
 
-		$('select.select2field,input.select2field', container).each( function() {
-			console.log('select2ifiying');
-			console.log(this);
+		$('select.select2field, input.select2field', container).each( function() {
 
 			var $this = $(this),
 				seperator = $this.attr('tagseperator') ? $this.attr('tagseperator') : ',',
@@ -20,17 +18,24 @@
 
 			console.log(options);
 
-			// add options to options map which may contain tags if tags attribute set.
-			$this.select2(
-				options
-			);
+			if ($this.hasClass('select2field-manual')) {
+				console.log('skipping manual bound select2 field');
+			} else {
+				console.log('select2ifiying');
+				console.log($this);
+
+				// add options to options map which may contain tags if tags attribute set.
+				$this.select2(
+					options
+				);
+			}
 		});
 	}
 
 	$.fn.unselect2ify = function(container) {
 		container = container || $(document);
 
-		$('select.select2field,input.select2field', container).each( function() {
+		$('select.select2field, input.select2field', container).each( function() {
 			$(this).select2('destroy');
 		});
 
