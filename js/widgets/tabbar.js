@@ -4,7 +4,6 @@
         //get tab id from hash
         var selectedTab = window.location.hash.substr(1);
         if (selectedTab !='' && selectedTab.substring(0, 4) == 'tab_') {
-
             var recentTabId = selectedTab;
             var recentTab = $("#" + recentTabId + ' a'),
                 rel = recentTab.attr('rel');
