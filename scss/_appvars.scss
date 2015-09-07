@@ -1,0 +1,17 @@
+/**
+ * Variables in this file are expected to be declared in the application before
+ * mosaic is included, they are defined here so they are known, and so mosaic scss
+ * can be compiled as a unit without errors.
+ */
+
+$default-font-family: Helvetica, Arial, sans-serif !default;
+
+$content-font-size: 1.4em !default;
+$content-font-family: $default-font-family !default;
+
+$error-colour: red !default;
+$warning-colour: orange !default;
+
+$widget-padding: 1em !default;
+$nav-background: #036 !default;
+$nav-color: #fff !default;

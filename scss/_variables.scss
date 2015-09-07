@@ -23,9 +23,11 @@ $label-font-size: 1.3em;
 $editable-font-size: $content-font-size;
 $element-width: 60%;
 
-	$input-element-width: $element-width;
-	$textarea-element-width: $element-width;
-	$select-element-width: $element-width;
+$input-element-width: $element-width;
+$textarea-element-width: $element-width;
+$select-element-width: $element-width;
+
+$button-transition-speed: 0.5s;
 
 $input-border-radius: 2px;
 

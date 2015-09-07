@@ -5,7 +5,6 @@
  */
 class MosaicImageExtension extends ModelExtension {
     private static $belongs_many_many = [
-        'Group' => 'GroupModel',
         'Organisation' => 'OrganisationModel',
         'Post' => 'PostModel'
     ];
