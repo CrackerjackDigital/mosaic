@@ -14,10 +14,59 @@
 	"require": {
 		"php": ">=5.3.2",
 		"composer/installers": "*",
-	    "silverstripe/framework": ">=3.0",
+		"robloach/component-installer": "*",
 	    "leafo/scssphp": ">=0.0.9",
+		"lodash/lodash": "3.10.1",
 		"components/font-awesome": "4.3.*@dev",
-		"components/masonry": "3.2.2"
+		"components/modernizr": "2.x",
+		"components/masonry": "3.2.2",
+		"webcreate/jquery-ias": "2.2.*",
+		"postaljs/postal.js": "1.0.7"
 	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "lodash/lodash",
+				"type": "component",
+				"version": "3.10.1",
+				"dist": {
+					"url": "https://github.com/lodash/lodash/archive/3.10.1.zip",
+					"type": "zip"
+				},
+				"extra": {
+					"component": {
+						"scripts": [
+							"lodash.js",
+							"lodash.min.js"
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "postaljs/postal.js",
+				"type": "component",
+				"version": "1.0.7",
+				"dist": {
+					"url": "https://github.com/postaljs/postal.js/archive/v1.0.7.zip",
+					"type": "zip"
+				},
+				"extra": {
+					"component": {
+						"scripts": [
+							"lib/postal.min.js",
+							"lib/postal.js"
+						]
+					}
+				},
+				"require": {
+					"lodash/lodash": "3.10.1"
+				}
+			}
+		}
+	],
 	"minimum-stability": "dev"
 }
