@@ -36,6 +36,7 @@
 }
 
 @mixin clickable {
+    text-align: center;
 	cursor: pointer;
 	border: none;
 	border-radius: $clickable-border-radius;

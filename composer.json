@@ -1,7 +1,7 @@
 {
 	"name": "crackerjackdigital/mosaic",
 	"type": "silverstripe-module",
-	"description": "SCSS dynamic compiler for SilverStripe",
+	"description": "Front-end components, libraries and tools",
 	"homepage": "http://github.com/crackerjackdigital",
 	"license": "BSD-3-Clause",
 	"keywords": ["silverstripe", "SCSS"],
@@ -9,93 +9,17 @@
 		{
 			"name": "Stephen Wake",
 			"homepage": "http://github.com/crackerjackdigital"
+		},
+		{
+			"name": "Nathaniel Ashiagbor",
+			"homepage": "http://github.com/crackerjackdigital"
 		}
 	],
 	"require": {
 		"php": ">=5.3.2",
+		"silverstripe/framework": ">=3.1",
 		"composer/installers": "*",
-		"robloach/component-installer": "*",
-	    "leafo/scssphp": ">=0.0.9",
-		"lodash/lodash": "3.10.1",
-		"components/jquery": "1.11.3",
-		"components/font-awesome": "4.4.*",
-		"components/modernizr": "2.x",
-		"components/masonry": "3.2.2",
-		"webcreate/jquery-ias": "2.2.*",
-		"postaljs/postal.js": "1.0.7",
-		"ckeditor/ckeditor": "4.5.4",
-		"artpolikarpov/fotorama": "4.6.4"
+		"robloach/component-installer": "*"
 	},
-	"repositories": [
-		{
-			"type": "package",
-			"package": {
-				"name": "lodash/lodash",
-				"type": "component",
-				"version": "3.10.1",
-				"dist": {
-					"url": "https://github.com/lodash/lodash/archive/3.10.1.zip",
-					"type": "zip"
-				},
-				"extra": {
-					"component": {
-						"scripts": [
-							"lodash.js",
-							"lodash.min.js"
-						]
-					}
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "postaljs/postal.js",
-				"type": "component",
-				"version": "1.0.7",
-				"dist": {
-					"url": "https://github.com/postaljs/postal.js/archive/v1.0.7.zip",
-					"type": "zip"
-				},
-				"extra": {
-					"component": {
-						"scripts": [
-							"lib/postal.min.js",
-							"lib/postal.js"
-						]
-					}
-				},
-				"require": {
-					"lodash/lodash": "3.10.1"
-				}
-			}
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "artpolikarpov/fotorama",
-				"type": "component",
-				"version": "4.6.4",
-				"dist": {
-					"url": "https://github.com/artpolikarpov/fotorama/archive/4.6.4.zip",
-					"type": "zip"
-				},
-				"src": {
-					"url": "https://github.com/artpolikarpov/fotorama.git",
-					"type": "git"
-				},
-				"extra": {
-					"component": {
-						"scripts": [
-							"src/js/fotorama.js"
-						],
-						"files": [
-							"src/i/*.png"
-						]
-					}
-				}
-			}
-		}
-	],
 	"minimum-stability": "dev"
 }

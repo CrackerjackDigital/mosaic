@@ -1,5 +1,7 @@
 ---
 Name: mosaic-config
+After:
+  - '#dropzone'
 ---
 
 FileField:
@@ -17,3 +19,8 @@ DropdownField:
 TextareaField:
   extensions:
     - MosaicTextareaFieldExtension
+
+FileAttachmentField:
+  module_scripts_dir: '/mosaic/js/widgets/dropzone/'
+  dropzone_script_file: '/vendor/crackerjackdigital/dropzone/dist/dropzone.js'
+  dropzone_config_file: '/mosaic/js/widgets/dropzone/dropzone_config.json'

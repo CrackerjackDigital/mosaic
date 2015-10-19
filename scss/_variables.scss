@@ -7,12 +7,6 @@ $fieldset-width: 100%;
 $field-container-width: 100%;
 $field-container-spacing: 0 0 1em;
 
-$clickable-transition-speed: 0.3s;
-$clickable-border-radius: 4px;
-$clickable-border: 1px solid transparent;
-$clickable-background: #E18800;
-$clickable-font-size: 1.4em;
-
 $overlay-background: rgba(0,0,0,0.25);
 
 $label-spacing-right: 1em;
@@ -41,9 +35,18 @@ $editable-padding-left: 0.4em;
 $editable-padding-right: 0.4em;
 $editable-padding: $editable-padding-top $editable-padding-right $editable-padding-bottom $editable-padding-left;
 
+/* Clickable Elements */
+$clickable-transition-speed: 0.3s;
+$clickable-border-radius: 0px;
+$clickable-border: 1px solid transparent;
+$clickable-background: #E18800;
+$clickable-font-size: 1.4em;
+
 $clickable-padding-top: 0.5em;
 $clickable-padding-bottom: 0.5em;
 $clickable-padding-left: 1em;
 $clickable-padding-right: 1em;
-$clickable-padding: $clickable-padding-top $clickable-padding-right $clickable-padding-bottom $clickable-padding-left;
+// $clickable-padding: $clickable-padding-top $clickable-padding-right $clickable-padding-bottom $clickable-padding-left;
 
+// done by line-height, min-width and text-align
+$clickable-padding: 0;
