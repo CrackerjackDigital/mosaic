@@ -17,12 +17,14 @@
 		"robloach/component-installer": "*",
 	    "leafo/scssphp": ">=0.0.9",
 		"lodash/lodash": "3.10.1",
+		"components/jquery": "1.11.3",
 		"components/font-awesome": "4.4.*",
 		"components/modernizr": "2.x",
 		"components/masonry": "3.2.2",
 		"webcreate/jquery-ias": "2.2.*",
 		"postaljs/postal.js": "1.0.7",
-		"ckeditor/ckeditor": "4.5.4"
+		"ckeditor/ckeditor": "4.5.4",
+		"artpolikarpov/fotorama": "4.6.4"
 	},
 	"repositories": [
 		{
@@ -65,6 +67,32 @@
 				},
 				"require": {
 					"lodash/lodash": "3.10.1"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "artpolikarpov/fotorama",
+				"type": "component",
+				"version": "4.6.4",
+				"dist": {
+					"url": "https://github.com/artpolikarpov/fotorama/archive/4.6.4.zip",
+					"type": "zip"
+				},
+				"src": {
+					"url": "https://github.com/artpolikarpov/fotorama.git",
+					"type": "git"
+				},
+				"extra": {
+					"component": {
+						"scripts": [
+							"src/js/fotorama.js"
+						],
+						"files": [
+							"src/i/*.png"
+						]
+					}
 				}
 			}
 		}
