@@ -17,7 +17,7 @@
 		"robloach/component-installer": "*",
 	    "leafo/scssphp": ">=0.0.9",
 		"lodash/lodash": "3.10.1",
-		"components/font-awesome": "4.3.*@dev",
+		"components/font-awesome": "4.4.*",
 		"components/modernizr": "2.x",
 		"components/masonry": "3.2.2",
 		"webcreate/jquery-ias": "2.2.*",
