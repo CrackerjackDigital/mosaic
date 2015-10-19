@@ -21,7 +21,8 @@
 		"components/modernizr": "2.x",
 		"components/masonry": "3.2.2",
 		"webcreate/jquery-ias": "2.2.*",
-		"postaljs/postal.js": "1.0.7"
+		"postaljs/postal.js": "1.0.7",
+		"ckeditor/ckeditor": "4.5.4"
 	},
 	"repositories": [
 		{
