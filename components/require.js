@@ -2037,6 +2037,10 @@ var components = {
             "main": "modernizr-built.js"
         },
         {
+            "name": "select2",
+            "main": "select2-built.js"
+        },
+        {
             "name": "lodash",
             "main": "lodash-built.js"
         },

@@ -24,7 +24,8 @@
 		"webcreate/jquery-ias": "2.2.*",
 		"postaljs/postal.js": "1.0.7",
 		"ckeditor/ckeditor": "4.5.4",
-		"artpolikarpov/fotorama": "4.6.4"
+		"artpolikarpov/fotorama": "4.6.4",
+		"ivaynberg/select2": "3.5.2"
 	},
 	"repositories": [
 		{
@@ -90,7 +91,8 @@
 							"src/js/fotorama.js"
 						],
 						"files": [
-							"src/i/*.png"
+							"src/i/*.png",
+							"src/scss/*.scss"
 						]
 					}
 				}

@@ -8,15 +8,17 @@ MosaicModule:
       - lib/fotorama/fotorama.css
     after:
       - /components/select2/select2.js
-      - /components/masonry/masonry.pkgd.min.js
-      - lib/lodash/lodash.min.js
-      - lib/postaljs/postal.min.js
-      - lib/ckeditor/ckeditor.js
-      - lib/fotorama/fotorama.js
+      - components/masonry/masonry.pkgd.min.js
+      - components/lodash/lodash.min.js
+      - components/postaljs/postal.min.js
+      - components/ckeditor/ckeditor.js
+      - components/fotorama/fotorama.js
+      - vendor/ckeditor/ckeditor/ckeditor.js
       - js/message-bus.js
       - js/widgets/sidebar.js
       - js/widgets/expando.js
       - js/widgets/list.js
+      - js/widgets/endless.js
       - js/widgets/tabbar.js
       - js/widgets/actionmenu.js
       - js/widgets/select2field.js
