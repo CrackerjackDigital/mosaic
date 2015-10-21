@@ -4,6 +4,10 @@ After:
   - '#dropzone'
 ---
 
+ContentController:
+  extensions:
+    - MosaicContentControllerExtension
+
 FileField:
   extensions:
     - MosaicFileFieldExtension

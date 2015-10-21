@@ -7,33 +7,39 @@
     // load masonry if browser doesn't do csscolumns
     if (!Modernizr.csscolumns) {
 
-        var container = document.querySelector(containerSel);
-        var msnry = new Masonry( container, {
-            // options
-            itemSelector: itemSel,
-            gutter: 10
-        });
+        var listView = $('#listView');
+        if (listView.length) {
 
-        if ($.ias) {
+            listView.imagesLoaded(function () {
+                var container = document.querySelector(containerSel);
+                var msnry = new Masonry( container, {
+                    itemSelector: itemSel,
+                    gutter: 10
+                });
 
-            var ias = $.ias({
-                container: containerSel,
-                item: itemSel,
-                pagination: paginationSel,
-                next: nextSel,
-                delay: 1200
+                if ($.ias) {
+
+                    var ias = $.ias({
+                        container: containerSel,
+                        item: itemSel,
+                        pagination: paginationSel,
+                        next: nextSel,
+                        delay: 1200
+                    });
+
+                    ias.on('render', function (items) {
+                        $(items).css({opacity: 0});
+                    });
+
+                    ias.on('rendered', function (items) {
+                        msnry.appended(items);
+                    });
+
+                    ias.extension(new IASSpinnerExtension());
+                }
             });
-
-            ias.on('render', function (items) {
-                $(items).css({opacity: 0});
-            });
-
-            ias.on('rendered', function (items) {
-                msnry.appended(items);
-            });
-
-            ias.extension(new IASSpinnerExtension());
         }
+
     } else {
         if ($.ias) {
 

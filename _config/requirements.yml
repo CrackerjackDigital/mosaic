@@ -1,30 +1,29 @@
 ---
 Name: mosaic-requirements
 ---
-
 MosaicModule:
   requirements:
     before:
-      - lib/fotorama/fotorama.css
+      components/jquery/jquery.min.js: true
     after:
-      - /components/select2/select2.js
-      - components/masonry/masonry.pkgd.min.js
-      - components/lodash/lodash.min.js
-      - components/postaljs/postal.min.js
-      - components/ckeditor/ckeditor.js
-      - components/fotorama/fotorama.js
-      - vendor/ckeditor/ckeditor/ckeditor.js
-      - js/message-bus.js
-      - js/widgets/sidebar.js
-      - js/widgets/expando.js
-      - js/widgets/list.js
-      - js/widgets/endless.js
-      - js/widgets/tabbar.js
-      - js/widgets/actionmenu.js
-      - js/widgets/select2field.js
-      - js/widgets/ckeditor.js
-      - js/widgets/confirmedpasswordfield.js
-      - js/widgets/postable.js
-      - js/widgets/modal.js
+      components/masonry/masonry.pkgd.min.js: true
+      components/lodash/lodash.min.js: true
+      components/postal.js/lib/postal.min.js: true
+      components/fotorama/src/js/fotorama.js: true
+      components/select2/select2.js: true
+      vendor/webcreate/jquery-ias/src/jquery-ias.js: true
+      vendor/ckeditor/ckeditor/ckeditor.js: true
+      js/message-bus.js: true
+      js/widgets/sidebar.js: true
+      js/widgets/expando.js: true
+      js/widgets/list.js: true
+      js/widgets/endless.js: true
+      js/widgets/tabbar.js: true
+      js/widgets/actionmenu.js: true
+      js/widgets/select2field.js: true
+      js/widgets/ckeditor.js: true
+      js/widgets/confirmedpasswordfield.js: true
+      js/widgets/postable.js: true
+      js/widgets/modal.js: true
 
 

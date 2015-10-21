@@ -1,0 +1,12 @@
+@mixin content-font {
+    font-family: $content-font-family;
+    font-size: $content-font-size;
+}
+@mixin glyph-font {
+    font-family: $glyph-font-family;
+    font-size: $glyph-font-size;
+}
+@mixin heading-font($font-size: $heading-font-base-size) {
+    font-family: $heading-font-family;
+    font-size: $font-size;
+}
