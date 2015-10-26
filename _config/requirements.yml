@@ -2,17 +2,28 @@
 Name: mosaic-requirements
 ---
 MosaicModule:
+  script_types:
+    js: true
+    css: true
+    jst: true
+  combine:
+    js: true
+    css: true
   requirements:
+    block:
+      - '/framework/thirdparty/jquery/*'
     before:
-      components/jquery/jquery.min.js: true
+      components/jquery/jquery.js: true
+      components/modernizr/modernizr-built.js: true
+      components/ckeditor/ckeditor.js: true
     after:
-      components/masonry/masonry.pkgd.min.js: true
-      components/lodash/lodash.min.js: true
-      components/postal.js/lib/postal.min.js: true
-      components/fotorama/src/js/fotorama.js: true
-      components/select2/select2.js: true
-      vendor/webcreate/jquery-ias/src/jquery-ias.js: true
-      vendor/ckeditor/ckeditor/ckeditor.js: true
+      components/masonry/masonry-built.js: true
+      components/lodash/lodash-built.js: true
+      components/postal.js/postal.js-built.js: true
+      components/fotorama/fotorama-built.js: true
+      components/select2/select2-built.js: true
+      components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
+      js/mosaic.js: true
       js/message-bus.js: true
       js/widgets/sidebar.js: true
       js/widgets/expando.js: true

@@ -4659,26 +4659,22 @@ nav ul li:first-child a {
   padding-left: 0px;
 }
 
-/* line 3, ../scss/widgets/_list.scss */
-ul.list {
-  display: none;
-}
-/* line 6, ../scss/widgets/_list.scss */
+/* line 4, ../scss/widgets/_list.scss */
 ul.list li {
   cursor: pointer;
 }
-/* line 9, ../scss/widgets/_list.scss */
+/* line 7, ../scss/widgets/_list.scss */
 ul.list li form {
   margin: 0;
   padding: 0;
   cursor: pointer;
 }
-/* line 14, ../scss/widgets/_list.scss */
+/* line 12, ../scss/widgets/_list.scss */
 ul.list li form fieldset {
   margin: 0;
   padding: 0;
 }
-/* line 19, ../scss/widgets/_list.scss */
+/* line 17, ../scss/widgets/_list.scss */
 ul.list li form div.field
 , ul.list li form dl.field {
   padding: 0;
@@ -4688,7 +4684,7 @@ ul.list li form div.field
   width: auto;
   line-height: 1em;
 }
-/* line 29, ../scss/widgets/_list.scss */
+/* line 27, ../scss/widgets/_list.scss */
 ul.list li form div.field
 label, ul.list li form dl.field label {
   font-size: 1.2em;
@@ -4697,7 +4693,7 @@ label, ul.list li form dl.field label {
   color: #999;
   padding-bottom: 0.2em;
 }
-/* line 32, ../scss/widgets/_list.scss */
+/* line 30, ../scss/widgets/_list.scss */
 ul.list li form div.field
 span, ul.list li form dl.field span {
   font-size: 1.3em;
@@ -4705,7 +4701,7 @@ span, ul.list li form dl.field span {
   color: #333;
   padding: 0;
 }
-/* line 35, ../scss/widgets/_list.scss */
+/* line 33, ../scss/widgets/_list.scss */
 ul.list li form div.field
 input, ul.list li form dl.field input {
   font-size: 1.3em;
@@ -4714,28 +4710,28 @@ input, ul.list li form dl.field input {
   padding: 0;
   width: auto;
 }
-/* line 39, ../scss/widgets/_list.scss */
+/* line 37, ../scss/widgets/_list.scss */
 ul.list li form div.field
 input:not([value]), ul.list li form dl.field input:not([value]) {
   visibility: hidden;
 }
-/* line 42, ../scss/widgets/_list.scss */
+/* line 40, ../scss/widgets/_list.scss */
 ul.list li form div.field
 input:not([value]):after, ul.list li form dl.field input:not([value]):after {
   content: "(none)";
   display: block;
 }
-/* line 52, ../scss/widgets/_list.scss */
+/* line 50, ../scss/widgets/_list.scss */
 ul.list li form.editable
 dl.field, ul.list li form.readonly dl.field {
   display: block;
 }
-/* line 55, ../scss/widgets/_list.scss */
+/* line 53, ../scss/widgets/_list.scss */
 ul.list li form.editable
 div.field, ul.list li form.readonly div.field {
   display: none;
 }
-/* line 61, ../scss/widgets/_list.scss */
+/* line 59, ../scss/widgets/_list.scss */
 ul.list li form .CompositeField {
   margin-bottom: 0;
 }

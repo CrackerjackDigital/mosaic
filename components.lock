@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "40f4b99a0bb8cc0b8af71f2510f478d4",
+    "hash": "9a8e6be1ba80233d07eb3717921f3f4e",
+    "content-hash": "e6b678ffd44433c1253eabf9b980cdd9",
     "packages": [
         {
             "name": "artpolikarpov/fotorama",
@@ -31,43 +32,22 @@
         {
             "name": "ckeditor/ckeditor",
             "version": "4.5.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ckeditor/ckeditor-releases.git",
-                "reference": "a84a972a367bc6c59bafb3e5fd503ec317d47daa"
-            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ckeditor/ckeditor-releases/zipball/a84a972a367bc6c59bafb3e5fd503ec317d47daa",
-                "reference": "a84a972a367bc6c59bafb3e5fd503ec317d47daa",
-                "shasum": ""
+                "url": "https://github.com/ckeditor/ckeditor-releases/archive/4.5.4.zip",
+                "reference": null,
+                "shasum": null
             },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+",
-                "LGPL-2.1+",
-                "MPL-1.1+"
-            ],
-            "authors": [
-                {
-                    "name": "CKSource",
-                    "homepage": "http://cksource.com"
+            "type": "component",
+            "extra": {
+                "component": {
+                    "files": [
+                        "skins/*/*",
+                        "plugins/*/*",
+                        "*.js"
+                    ]
                 }
-            ],
-            "description": "JavaScript WYSIWYG web text editor.",
-            "homepage": "http://ckeditor.com",
-            "keywords": [
-                "CKEditor",
-                "editor",
-                "fckeditor",
-                "html",
-                "javascript",
-                "richtext",
-                "text",
-                "wysiwyg"
-            ],
-            "time": "2015-10-06 13:02:19"
+            }
         },
         {
             "name": "components/font-awesome",
@@ -477,62 +457,6 @@
             "time": "2015-10-15 01:33:42"
         },
         {
-            "name": "leafo/scssphp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/leafo/scssphp.git",
-                "reference": "6252bedccc3d1c46e4b7075d3512ec4eaa2a9fc0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/leafo/scssphp/zipball/6252bedccc3d1c46e4b7075d3512ec4eaa2a9fc0",
-                "reference": "6252bedccc3d1c46e4b7075d3512ec4eaa2a9fc0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "kherge/box": "~2.5",
-                "phpunit/phpunit": "~3.7",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "bin": [
-                "bin/pscss"
-            ],
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "classmap.php"
-                ],
-                "psr-4": {
-                    "Leafo\\ScssPhp\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Leaf Corcoran",
-                    "email": "leafot@gmail.com",
-                    "homepage": "http://leafo.net"
-                }
-            ],
-            "description": "scssphp is a compiler for SCSS written in PHP.",
-            "homepage": "http://leafo.github.io/scssphp/",
-            "keywords": [
-                "css",
-                "less",
-                "sass",
-                "scss",
-                "stylesheet"
-            ],
-            "time": "2015-10-16 22:14:52"
-        },
-        {
             "name": "lodash/lodash",
             "version": "3.10.1",
             "dist": {
@@ -668,44 +592,24 @@
             "time": "2015-10-18 20:23:24"
         },
         {
-            "name": "webcreate/jquery-ias",
-            "version": "v2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webcreate/infinite-ajax-scroll.git",
-                "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7"
-            },
+            "name": "webcreate/infinite-ajax-scroll",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webcreate/infinite-ajax-scroll/zipball/7380f74fca64180a4c5da18d01065a8aef0494b7",
-                "reference": "7380f74fca64180a4c5da18d01065a8aef0494b7",
-                "shasum": ""
+                "url": "https://github.com/webcreate/infinite-ajax-scroll/archive/v2.2.1.zip",
+                "reference": null,
+                "shasum": null
             },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "proprietary",
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "fieg",
-                    "email": "jeroen@fieg.nl",
-                    "homepage": "http://webcreate.nl"
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "src/extension/*.js",
+                        "src/callbacks.js",
+                        "src/jquery-ias.js"
+                    ]
                 }
-            ],
-            "description": "Infinite AJAX Scroll: A jQuery plugin that turns your server-side pagination into an infinite scrolling one using AJAX",
-            "homepage": "http://infiniteajaxscroll.com",
-            "keywords": [
-                "ajax",
-                "ias",
-                "infinite",
-                "jquery",
-                "pagination",
-                "scroll",
-                "scrolling"
-            ],
-            "time": "2015-05-08 14:58:16"
+            }
         }
     ],
     "packages-dev": [],

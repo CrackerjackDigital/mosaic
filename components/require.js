@@ -2047,6 +2047,10 @@ var components = {
         {
             "name": "postal.js",
             "main": "postal.js-built.js"
+        },
+        {
+            "name": "infinite-ajax-scroll",
+            "main": "infinite-ajax-scroll-built.js"
         }
     ],
     "shim": {
