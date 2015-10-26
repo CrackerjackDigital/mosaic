@@ -1,4 +1,4 @@
 (function($) {
     console.log('Initiaising endless');
-    mosaic.endless('#listView');
+    mosaic.endless();
 })(jQuery);
