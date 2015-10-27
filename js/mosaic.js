@@ -1,73 +1,78 @@
-var Mosaic = function () {
-    window.mosaic = this;
-
-    this.config = {
-        listView: 'ul.list-view',
-        masonry: {
-            itemSelector: 'li',
-            gutter: 10
-        },
-        ias: {
-            item: 'li',
-            pagination: '.pagination',
-            next: 'a.next',
-            delay: 1200,
-            showSpinner: true
-        }
+var Mosaic = function (options) {
+    var defaults = {
+        debug: 1,
+        listView: 'ul.list-view'
     };
-    this.endless = function () {
-        var containerElement = document.querySelector(this.config.listView);
 
-        if (containerElement) {
-            if (imagesLoaded) {
-                console.log('using imagesLoaded component');
-                imagesLoaded(
-                    containerElement,
-                    function() {
-                        mosaic.masonry(containerElement)
+    /* LOGGING */
+
+    this.log = function(message  /*, details, ... */) {
+        if (this.config.debug && console && console.log) {
+            console.log(message);
+            var args = Array.prototype.slice.call(arguments, 1);
+            if (args.length) {
+                console.dir ? console.dir(args) : console.log(args);
+            }
+        }
+    }
+
+    this.init = function(extensions) {
+        if (!window.mosaic) {
+            window.mosaic = this;
+
+            mosaic.config = jQuery.extend(true, {}, mosaic.config || {}, defaults, options);
+
+            mosaic.log("Initialising mosaic extensions: ", extensions);
+
+            // initialise extensions passed in init method options parameter
+            _.forEach(
+                extensions,
+                function(options, extensionName) {
+                    console.log('Initialising ' + extensionName + ' extension');
+                    if (this[extensionName]) {
+                        this[extensionName].call(this, options);
                     }
-                )
-            } else {
-                console.log('using raw masonry');
-                this.masonry(containerElement);
+                },
+                mosaic
+            );
+            // if no messaging was registered by extensions then we need to create some stubs
+            mosaic.pub = mosaic.pub || {};
+            mosaic.sub = mosaic.sub || {};
+
+
+            mosaic.log('before messaging', mosaic);
+            /* DEFAULT MESSAGING */
+            // use presence of addChannel to indicate if messaging has been
+            // registered elsewhere (e.g. mosaic/js/components/postal.js)
+            if (!mosaic.addChannel) {
+                mosaic.addChannel = function (channelName) {
+                    mosaic.log("No messaging registered, load postal component or alternative");
+                }.bind(mosaic);
+
+                _.forEach(
+                    mosaic.config.channels,
+                    function (channelName) {
+                        this.log('Adding default channel handler ' + channelName);
+
+                        this.pub[channelName] = function (message) {
+                            mosaic.log("No publisher registered, load postal component or alternative");
+                        }.bind(this);
+
+                        this.sub[channelName] = function (fn, filters) {
+                            mosaic.log("No subscriber registered, load postal component or alternative");
+                        }.bind(this);
+
+                    },
+                    mosaic
+                );
+            }
+            mosaic.log('after messaging init', mosaic);
+            /* DEBUG MESSAGING */
+            if (mosaic.config.debug) {
+                mosaic.sub.debug(mosaic.log, '*.*');
+                mosaic.pub.debug('debugging channel initialised');
             }
         }
+        return this;
     };
-    /**
-     * Apply masonry to containerElement using infinite-ajax-scroll if defined ($.ias exists)
-     * @param containerElement
-     */
-    this.masonry = function (containerElement) {
-        var msnry = new Masonry(containerElement, this.config.masonry),
-            ias = $.ias ? $.ias(this.config.ias) : null;
-
-        if (ias) {
-
-            ias.on('render', function (items) {
-                $(items).css({opacity: 0});
-            });
-
-            ias.on('rendered', function (items) {
-                msnry.appended(items);
-            });
-
-            if (this.config.ias.showSpinner) {
-                ias.extension(new IASSpinnerExtension());
-            }
-
-            // TODO: hook event-bus in
-            ias.on('next', function () {
-                //                            mosaic.publish()
-            });
-        }
-    }
-    this.init = function() {
-        console.log("Initialising mosaic");
-        // keep ias container in step with main list view
-        this.config.ias.container = this.config.listView;
-    }
-    this.init();
 };
-(function($) {
-    new Mosaic();
-})(jQuery);

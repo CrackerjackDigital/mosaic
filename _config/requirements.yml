@@ -7,7 +7,7 @@ MosaicModule:
     css: true
     jst: true
   combine:
-    js: true
+    js: false
     css: true
   requirements:
     block:
@@ -24,6 +24,10 @@ MosaicModule:
       components/select2/select2-built.js: true
       components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
       js/mosaic.js: true
+      js/components/postal.js: true
+      js/components/ias.js: true
+      js/components/masonry.js: true
+      js/components/endless.js: true
       js/message-bus.js: true
       js/widgets/sidebar.js: true
       js/widgets/expando.js: true
