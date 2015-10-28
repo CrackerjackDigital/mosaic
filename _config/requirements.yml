@@ -17,13 +17,15 @@ MosaicModule:
       components/modernizr/modernizr-built.js: true
       components/ckeditor/ckeditor.js: true
     after:
-      components/masonry/masonry-built.js: true
       components/lodash/lodash-built.js: true
+      components/json-query/json-query-built.js: true
+      components/masonry/masonry-built.js: true
       components/postal.js/postal.js-built.js: true
       components/fotorama/fotorama-built.js: true
       components/select2/select2-built.js: true
       components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
       js/mosaic.js: true
+      js/components/badger.js: true
       js/components/postal.js: true
       js/components/ias.js: true
       js/components/masonry.js: true

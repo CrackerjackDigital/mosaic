@@ -25,6 +25,10 @@ var components = {
             "main": "lodash-built.js"
         },
         {
+            "name": "json-query",
+            "main": "json-query-built.js"
+        },
+        {
             "name": "postal.js",
             "main": "postal.js-built.js"
         },

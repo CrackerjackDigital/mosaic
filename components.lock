@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a8e6be1ba80233d07eb3717921f3f4e",
-    "content-hash": "e6b678ffd44433c1253eabf9b980cdd9",
+    "hash": "ee29dfcce1ee72bdac817d0c56d89143",
+    "content-hash": "6e72e0a14819231e82ac815b9843cc17",
     "packages": [
         {
             "name": "artpolikarpov/fotorama",
@@ -51,40 +51,24 @@
         },
         {
             "name": "components/font-awesome",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/font-awesome.git",
-                "reference": "7dffacc72e566e5db6272244effc06f64fe9f185"
-            },
+            "version": "4.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/font-awesome/zipball/7dffacc72e566e5db6272244effc06f64fe9f185",
-                "reference": "7dffacc72e566e5db6272244effc06f64fe9f185",
-                "shasum": ""
+                "url": "https://github.com/components/font-awesome/archive/4.4.0.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "component",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4.x-dev"
-                },
                 "component": {
-                    "styles": [
-                        "css/font-awesome.css"
-                    ],
                     "files": [
-                        "css/font-awesome.min.css",
-                        "fonts/*"
+                        "scss/*.scss",
+                        "less/*.less",
+                        "fonts/*",
+                        "css/*"
                     ]
                 }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT",
-                "OFL-1.1"
-            ],
-            "description": "The iconic font designed for use with Twitter Bootstrap.",
-            "time": "2015-07-30 02:38:45"
+            }
         },
         {
             "name": "components/jquery",
@@ -476,6 +460,25 @@
             }
         },
         {
+            "name": "mmckegg/json-query",
+            "version": "1.5.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mmckegg/json-query/archive/v1.5.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "lib/*.js",
+                        "*.js"
+                    ]
+                }
+            }
+        },
+        {
             "name": "postaljs/postal.js",
             "version": "1.0.7",
             "dist": {
@@ -551,12 +554,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "82fb0fce303439d147a20a7426326876407a41de"
+                "reference": "7881472d4b374a3b48988ca8621f15245a667f95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/82fb0fce303439d147a20a7426326876407a41de",
-                "reference": "82fb0fce303439d147a20a7426326876407a41de",
+                "url": "https://api.github.com/repos/symfony/process/zipball/7881472d4b374a3b48988ca8621f15245a667f95",
+                "reference": "7881472d4b374a3b48988ca8621f15245a667f95",
                 "shasum": ""
             },
             "require": {
@@ -589,7 +592,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2015-10-18 20:23:24"
+            "time": "2015-10-23 14:52:08"
         },
         {
             "name": "webcreate/infinite-ajax-scroll",

@@ -24,7 +24,8 @@
 		"postaljs/postal.js": "1.0.7",
 		"ckeditor/ckeditor": "4.5.4",
 		"artpolikarpov/fotorama": "4.6.4",
-		"ivaynberg/select2": "3.5.2"
+		"ivaynberg/select2": "3.5.2",
+		"mmckegg/json-query": "1.5.*"
 	},
 	"repositories": [
 		{
@@ -67,6 +68,28 @@
 				},
 				"require": {
 					"lodash/lodash": "3.10.1"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "components/font-awesome",
+				"type": "component",
+				"version": "4.4.0",
+				"dist": {
+					"url": "https://github.com/components/font-awesome/archive/4.4.0.zip",
+					"type": "zip"
+				},
+				"extra": {
+					"component": {
+						"files": [
+							"scss/*.scss",
+							"less/*.less",
+							"fonts/*",
+							"css/*"
+						]
+					}
 				}
 			}
 		},
@@ -146,6 +169,31 @@
 					}
 				}
 			}
-		}	],
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "mmckegg/json-query",
+				"type": "component",
+				"version": "1.5.0",
+				"dist": {
+					"type": "zip",
+					"url": "https://github.com/mmckegg/json-query/archive/v1.5.0.zip"
+				},
+				"src": {
+					"type": "git",
+					"url": "https://github.com/mmckegg/json-query.git"
+				},
+				"extra": {
+					"component": {
+						"scripts": [
+							"lib/*.js",
+							"*.js"
+						]
+					}
+				}
+			}
+		}
+	],
 	"minimum-stability": "dev"
 }

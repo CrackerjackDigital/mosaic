@@ -32,7 +32,7 @@ var Mosaic = function (options) {
                 function(options, extensionName) {
                     console.log('init ' + extensionName)
                     if (this[extensionName]) {
-                        this[extensionName](options);
+                        this[extensionName](options, mosaic);
                     }
                 },
                 mosaic
