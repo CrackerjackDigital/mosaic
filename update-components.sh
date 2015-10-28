@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Updating Mosaic components"
 echo "1/3: setting up environment"
 dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 cd $dir

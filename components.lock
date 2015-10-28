@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ee29dfcce1ee72bdac817d0c56d89143",
-    "content-hash": "6e72e0a14819231e82ac815b9843cc17",
+    "hash": "3fd9908b09855f15a0e9e5a4dfa8d58a",
+    "content-hash": "469e1fb47d11eb2ba8968da46a285342",
     "packages": [
         {
             "name": "artpolikarpov/fotorama",
@@ -455,25 +455,6 @@
                     "scripts": [
                         "lodash.js",
                         "lodash.min.js"
-                    ]
-                }
-            }
-        },
-        {
-            "name": "mmckegg/json-query",
-            "version": "1.5.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/mmckegg/json-query/archive/v1.5.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "lib/*.js",
-                        "*.js"
                     ]
                 }
             }
