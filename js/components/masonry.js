@@ -7,6 +7,7 @@ Mosaic.prototype.masonry = function(options) {
             itemSelector: 'li',
             gutter: 10
         },
+        mosaic = this,
         mason,
         element;
 
@@ -20,7 +21,8 @@ Mosaic.prototype.masonry = function(options) {
         mason = new Masonry(element, this.config.masonry);
 
         // proxy through appended to inner mason
-        this.appended = function(items) {
+        this.appendItems = function(items) {
+            mosaic.log('appengin', items);
             mason.appended(items);
         }
 

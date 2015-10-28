@@ -17,7 +17,8 @@ Mosaic.prototype.endless = function(options) {
 
         this.sub.ui(
             function(items) {
-                this.masonry.appended(items);
+                this.log('Appending', items);
+                this.appendItems(items);
             }.bind(this),
 
             this.config.ias.topics.end

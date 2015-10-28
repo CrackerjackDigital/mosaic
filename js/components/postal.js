@@ -62,10 +62,10 @@ Mosaic.prototype.messaging = function(options) {
             this.add = function (channelName) {
                 mosaic.log('Adding channel method ' + channelName + ' to publisher');
 
-                this[channelName] = function (topic) {
+                this[channelName] = function (topic, data) {
                     mosaic.channels[channelName].publish({
                         'topic': topic,
-                        'data': Array.prototype.slice.call(arguments, 1)
+                        'data': data
                     });
                 };
             };
