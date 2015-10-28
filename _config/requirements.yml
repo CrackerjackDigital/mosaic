@@ -32,7 +32,6 @@ MosaicModule:
       js/widgets/sidebar.js: true
       js/widgets/expando.js: true
       js/widgets/list.js: true
-      js/widgets/endless.js: true
       js/widgets/tabbar.js: true
       js/widgets/actionmenu.js: true
       js/widgets/select2field.js: true
