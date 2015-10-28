@@ -17,7 +17,7 @@ Mosaic.prototype.messaging = function(options) {
         // NB messaging extends mosaic directly with the 'channels' collection
         this.channels = {};
 
-        this.log('Initialising message channels');
+        this.log('Initialising Mosaic.postal messaging extension', this);
 
         /** Add each channelName in mosaic.channels so may be referenced directly */
         _.forEach(
@@ -95,6 +95,7 @@ Mosaic.prototype.messaging = function(options) {
             }
             return this.channels[channelName];
         }
+
         mosaic.log('DONE', this);
     }
 };

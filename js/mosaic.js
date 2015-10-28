@@ -1,7 +1,6 @@
 var Mosaic = function (options) {
     var defaults = {
-        debug: 1,
-        listView: 'ul.list-view'
+        debug: 7           // 0 = none, 1 = minimum, 2 = more, 4 = debug messaging
     };
 
     /* LOGGING */
@@ -9,9 +8,12 @@ var Mosaic = function (options) {
     this.log = function(message  /*, details, ... */) {
         if (this.config.debug && console && console.log) {
             console.log(message);
-            var args = Array.prototype.slice.call(arguments, 1);
-            if (args.length) {
-                console.dir ? console.dir(args) : console.log(args);
+            if (this.config.debug & 2) {
+                // we want to show extra details as well as the message
+                var args = Array.prototype.slice.call(arguments, 1);
+                if (args.length) {
+                    console.dir ? console.dir(args) : console.log(args);
+                }
             }
         }
     }
@@ -28,9 +30,9 @@ var Mosaic = function (options) {
             _.forEach(
                 extensions,
                 function(options, extensionName) {
-                    console.log('Initialising ' + extensionName + ' extension');
+                    console.log('init ' + extensionName)
                     if (this[extensionName]) {
-                        this[extensionName].call(this, options);
+                        this[extensionName](options);
                     }
                 },
                 mosaic
@@ -45,25 +47,29 @@ var Mosaic = function (options) {
             // use presence of addChannel to indicate if messaging has been
             // registered elsewhere (e.g. mosaic/js/components/postal.js)
             if (!mosaic.addChannel) {
+                mosaic.channels = {};
+
                 mosaic.addChannel = function (channelName) {
                     mosaic.log("No messaging registered, load postal component or alternative");
                 }.bind(mosaic);
 
                 _.forEach(
-                    mosaic.config.channels,
+                    this.config.channels,
                     function (channelName) {
                         this.log('Adding default channel handler ' + channelName);
 
                         this.pub[channelName] = function (message) {
-                            mosaic.log("No publisher registered, load postal component or alternative");
+                            mosaic.log('Default Channel!');
+                            mosaic.log.apply(mosaic, arguments);
                         }.bind(this);
 
                         this.sub[channelName] = function (fn, filters) {
-                            mosaic.log("No subscriber registered, load postal component or alternative");
+                            mosaic.log('Default Channel!');
+                            mosaic.log.apply(mosaic, arguments);
                         }.bind(this);
 
                     },
-                    mosaic
+                    this
                 );
             }
             mosaic.log('after messaging init', mosaic);
@@ -71,6 +77,28 @@ var Mosaic = function (options) {
             if (mosaic.config.debug) {
                 mosaic.sub.debug(mosaic.log, '*.*');
                 mosaic.pub.debug('debugging channel initialised');
+
+                if (mosaic.config.debug & 4) {
+                    mosaic.log('debug listener setup');
+                    _.forEach(
+                        mosaic.channels,
+                        function (channel) {
+                            var channelName = channel.channel;
+
+                            if (channelName != 'debug') {
+                                mosaic.log('attaching to channel ' + channelName);
+
+                                mosaic.sub[channelName](
+                                    function(envelope) {
+                                        mosaic.pub.debug(envelope);
+                                    },
+                                    '*.*'
+                                );
+                            }
+                        },
+                        this
+                    )
+                }
             }
         }
         return this;

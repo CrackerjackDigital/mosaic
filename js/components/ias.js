@@ -5,32 +5,39 @@ Mosaic.prototype.ias = function(options) {
         pagination: '.pagination',
         next: 'a.next',
         delay: 1200,
-        showSpinner: true
+        showSpinner: true,
+        topics: {
+            start: 'ias-start',
+            end: 'ias-end',
+            next: 'ias-next'
+        }
     };
 
-    if (jQuery.ias && !Mosaic.prototype.ias) {
+    if ($.ias) {
+        this.log('Initialising Mosaic.ias extension', this);
 
-        this.log('Initialising Mosaic.ias extension');
+        this.config.ias = $.extend(true, {}, this.config.ias || {}, defaults, options);
 
-        if (!this.config.ias) {
-            this.config.ias = jQuery.extend({}, defaults, options);
-        }
-        jQuery.ias(this.config.ias);
+        var ias = $.ias(this.config.ias);
 
         if (this.config.ias.showSpinner) {
-            jQuery.ias.extension(new IASSpinnerExtension());
+            this.log('Adding spinner ias extension');
+            ias.extension(new IASSpinnerExtension());
         }
 
-        jQuery.ias.on('render', function(items) {
-            this.pub.ui('ias-start', items);
+        ias.on('render', function(items) {
+            this.pub.ui(this.config.ias.topics.start, items);
         }.bind(this));
 
-        jQuery.ias.on('rendered', function(items) {
-            this.pub.ui('ias-end', items);
+        ias.on('rendered', function(items) {
+            this.pub.ui(this.config.ias.topics.end, items);
         }.bind(this));
 
-        jQuery.ias.on('next', function() {
-            this.pub.ui('ias-next');
+        ias.on('next', function() {
+            this.pub.ui(this.config.ias.topics.next);
         }.bind(this));
+
+    } else {
+        this.log("Can't initialise Mosaic.ias, ias library not loaded");
     }
 };

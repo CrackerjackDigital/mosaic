@@ -10,20 +10,12 @@ Mosaic.prototype.masonry = function(options) {
         mason,
         element;
 
-    console.log('masonry');
-    console.log(this);
+    this.config.masonry = jQuery.extend({}, this.config.masonry || {}, defaults, options);
 
-    this.appended = function() {
-        this.log('Masonry not loaded');
-    };
-
-    if (!this.config.masonry) {
-        this.config.masonry = jQuery.extend({}, defaults, options);
-    }
     element = document.querySelector(this.config.masonry.container);
 
     if (Masonry && element) {
-        console.log('Initialising Mosaic.masonry extension');
+        this.log('Initialising Mosaic.ias extension', this);
 
         mason = new Masonry(element, this.config.masonry);
 
@@ -31,6 +23,13 @@ Mosaic.prototype.masonry = function(options) {
         this.appended = function(items) {
             mason.appended(items);
         }
+
+    } else {
+        this.appended = function() {
+            this.log('Masonry not loaded');
+        };
+
+        this.log("Can't initialise Masonry, library not loaded or no element found");
     }
 };
 
