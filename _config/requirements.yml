@@ -7,7 +7,7 @@ MosaicModule:
     css: true
     jst: true
   combine:
-    js: true
+    js: false
     css: true
   requirements:
     block:
