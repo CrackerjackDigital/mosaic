@@ -5,18 +5,33 @@ var Mosaic = function (options) {
 
     /* LOGGING */
 
-    this.log = function(message  /*, details, ... */) {
-        if (this.config.debug && console && console.log) {
-            console.log(message);
-            if (this.config.debug & 2) {
-                // we want to show extra details as well as the message
-                var args = Array.prototype.slice.call(arguments, 1);
-                if (args.length) {
-                    console.dir ? console.dir(args) : console.log(args);
+    this.dump = function(output) {
+        if (this.config.debug) {
+            if (console && console.log) {
+                // always try and use console.dir if avaiable and we are given an object
+                if (_.isObject(output)) {
+                    console.dir ? console.dir(output) : console.log(output);
+                } else {
+                    console.log(output);
                 }
             }
         }
-    }
+    };
+
+    this.log = function(message  /*, details, ... */) {
+        if (this.config.debug) {
+            this.dump(message);
+
+            if (2 == (this.config.debug & 2)) {
+                // we want to show extra details as well as the message
+                _.forEach(
+                    Array.prototype.slice.call(arguments, 1),
+                    this.dump,
+                    this
+                );
+            }
+        }
+    };
 
     this.init = function(extensions) {
         if (!window.mosaic) {
@@ -30,7 +45,7 @@ var Mosaic = function (options) {
             _.forEach(
                 extensions,
                 function(options, extensionName) {
-                    console.log('init ' + extensionName)
+                    mosaic.log('init ' + extensionName)
                     if (this[extensionName]) {
                         this[extensionName](options, mosaic);
                     }
@@ -54,7 +69,7 @@ var Mosaic = function (options) {
                 }.bind(mosaic);
 
                 _.forEach(
-                    this.config.channels,
+                    mosaic.config.channels,
                     function (channelName) {
                         this.log('Adding default channel handler ' + channelName);
 
@@ -72,6 +87,7 @@ var Mosaic = function (options) {
                     this
                 );
             }
+
             mosaic.log('after messaging init', mosaic);
             /* DEBUG MESSAGING */
             if (mosaic.config.debug) {

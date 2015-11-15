@@ -1,0 +1,13 @@
+/**
+ * Sets the Mosaic endpoint map to Model Class Name => route_part for each
+ * model.
+ */
+;Mosaic.prototype.endpoints = function(options, mosaic) {
+    if (_.isUndefined(mosaic.config)) {
+        mosaic.config = {};
+    };
+    _.assign(
+        mosaic.config.endpoints,
+	    ({ $MosaicModelToEndpointMap })
+    );
+};

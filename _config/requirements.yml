@@ -9,27 +9,33 @@ MosaicModule:
   combine:
     js: false
     css: true
+    jst: false
   requirements:
     block:
       - '/framework/thirdparty/jquery/*'
     before:
-      components/jquery/jquery.js: true
-      components/modernizr/modernizr-built.js: true
+      components/jquery/jquery.min.js: true
+      components/modernizr/modernizr.js: true
       components/ckeditor/ckeditor.js: true
     after:
-      components/lodash/lodash-built.js: true
-      components/json-query/json-query-built.js: true
-      components/masonry/masonry-built.js: true
-      components/postal.js/postal.js-built.js: true
+      components/lodash/lodash.min.js: true
+#      components/json-query/json-query-built.js: true
+      components/masonry/masonry.pkgd.js: true
+      components/postal.js/lib/postal.js: true
       components/fotorama/fotorama-built.js: true
       components/select2/select2-built.js: true
       components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
+      components/object-hash/object-hash-built.js: true
       js/mosaic.js: true
-      js/components/badger.js: true
-      js/components/postal.js: true
-      js/components/ias.js: true
-      js/components/masonry.js: true
-      js/components/endless.js: true
+      js/mosaic.jst: true
+      js/components/util/hash.object-hash.js: true
+      js/components/util/strings.js: true
+      js/components/data/data.jquery.js: true
+      js/components/messaging/messaging.postal.js: true
+      js/components/ui/ias.js: true
+      js/components/ui/grid.masonry.js: true
+      js/components/ui/endless.js: true
+#      js/components/ui/badger.js: true
       js/message-bus.js: true
       js/widgets/sidebar.js: true
       js/widgets/expando.js: true

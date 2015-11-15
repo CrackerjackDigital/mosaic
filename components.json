@@ -25,7 +25,8 @@
 		"postaljs/postal.js": "1.0.7",
 		"ckeditor/ckeditor": "4.5.4",
 		"artpolikarpov/fotorama": "4.6.4",
-		"ivaynberg/select2": "3.5.2"
+		"ivaynberg/select2": "3.5.2",
+		"puleos/object-hash": "0.9.*"
 	},
 	"repositories": [
 		{
@@ -210,6 +211,25 @@
 						"scripts": [
 							"lib/*.js",
 							"*.js"
+						]
+					}
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "puleos/object-hash",
+				"type": "component",
+				"version": "0.9.2",
+				"dist": {
+					"type": "zip",
+					"url": "https://github.com/puleos/object-hash/archive/v0.9.2.zip"
+				},
+				"extra": {
+					"component": {
+						"scripts": [
+							"dist/object_hash.js"
 						]
 					}
 				}

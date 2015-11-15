@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "90ee9f3bca84084c691ae240e8b087de",
-    "content-hash": "6edf526ff3127380dc8849446162b36d",
+    "hash": "c03028a84e1a4fd5ff1a23af91d2a427",
+    "content-hash": "a2afc773abbd0b2c382eeac74e4a0476",
     "packages": [
         {
             "name": "artpolikarpov/fotorama",
@@ -477,6 +477,24 @@
                     "scripts": [
                         "lib/postal.min.js",
                         "lib/postal.js"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "puleos/object-hash",
+            "version": "0.9.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/puleos/object-hash/archive/v0.9.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "dist/object_hash.js"
                     ]
                 }
             }
