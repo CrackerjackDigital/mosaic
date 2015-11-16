@@ -28,25 +28,35 @@ class Select2Field extends DropdownField {
 
                 /** @var DataObject $model */
                 if (!$model = $controller->getModelInstance($mode)) {
-                    $model = singleton($controller->getModelClass());
+                    $modelClass = $controller->getModelClass();
+                    if (ClassInfo::exists($modelClass)) {
+                        $model = singleton($modelClass);
+                    }
                 }
-                $config = $model->config();
+                if ($model) {
+                    $config = $model->config();
 
-                $nameNoID = substr($name, -2, 2) === 'ID' ? substr($name, 0, -2) : $name;
+                    $nameNoID = substr($name, -2, 2) === 'ID'
+                        ? substr($name, 0, -2) : $name;
 
-                if ($relatedClass = $model->getRelationClass($nameNoID)) {
-                    $title = singleton($relatedClass)->singular_name();
+                    if ($relatedClass = $model->getRelationClass($nameNoID)) {
+                        $title = singleton($relatedClass)->singular_name();
 
-                    if (DataObject::get($relatedClass)->count()) {
-                        $source = DataObject::get($relatedClass)->map()->toArray();
+                        if (DataObject::get($relatedClass)->count()) {
+                            $source = DataObject::get($relatedClass)
+                                ->map()
+                                ->toArray();
+                        }
+                        if (in_array($nameNoID, $config->get('has_one')
+                            ?: [])) {
+                            $value = $model->$name;
+                        }
+
                     }
-                    if (in_array($nameNoID, $config->get('has_one') ?: [])) {
-                        $value = $model->$name;
-                    }
-
-                } else if ($dbObject = $model->dbObject($name)) {
-                    if ($dbObject->hasMethod('enumValues')) {
-                        $source = $dbObject->enumValues();
+                    else if ($dbObject = $model->dbObject($name)) {
+                        if ($dbObject->hasMethod('enumValues')) {
+                            $source = $dbObject->enumValues();
+                        }
                     }
                 }
             }
