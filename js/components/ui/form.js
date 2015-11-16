@@ -20,7 +20,7 @@ Mosaic.prototype.form = function(options, mosaic) {
 
             function bind() {
                 $form.on('submit', function() {
-                    mosaic.msg.ui.pub(
+                    mosaic.ui.pub(
                         'form.submit',
                         data($form),
                         {

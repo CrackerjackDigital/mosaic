@@ -25,19 +25,19 @@ Mosaic.prototype.messaging = function(options, mosaic) {
         // update mosaic config with the messaging settings
         this.config.messaging = jQuery.extend(true, {}, this.config.messaging || {}, defaults, options);
 
-        if (_.isUndefined(mosaic.msg.channels)) {
-            // NB messaging extends mosaic directly with the 'channels' collection
-            mosaic.msg.channels = {};
-        }
+	    // create channels, pub and sub objects if not already there
+	    if (!mosaic.channels) {
+		    mosaic.channels = {};
+	    }
 
-        this.log('Initialising Mosaic.postal messaging extension', this);
+	    this.log('Initialising Mosaic.postal messaging extension', this);
 
-        /** Add each channelName in mosaic.msg.channels so may be referenced directly */
+        /** Add each channelName in mosaic.channels so may be referenced directly */
         _.forEach(
             this.config.messaging.channels,
             function (channelName) {
                 console.log('Adding channel ' + channelName + ' to mosaic map');
-                mosaic.msg.channels[channelName] = postal.channel(channelName);
+                mosaic.channels[channelName] = postal.channel(channelName);
             },
             this
         );
@@ -51,7 +51,7 @@ Mosaic.prototype.messaging = function(options, mosaic) {
             this.add = function (channelName) {
                 mosaic.log('Adding channel method ' + channelName + ' to subscriber');
                 this[channelName] = function (fn, topics) {
-                    mosaic.msg.channels[channelName].subscribe(
+                    mosaic.channels[channelName].subscribe(
                         topics || '*.*',
                         fn
                     );
@@ -75,8 +75,8 @@ Mosaic.prototype.messaging = function(options, mosaic) {
             this.add = function (channelName) {
                 mosaic.log('Adding channel method ' + channelName + ' to publisher');
 
-                mosaic.msg[channelName] = function (topic, data, info) {
-                    mosaic.msg.channels[channelName].publish({
+                this[channelName] = function (topic, data, info) {
+                    mosaic.channels[channelName].publish({
                         'topic': topic,
                         'data': data,
                         'info': info
@@ -94,20 +94,20 @@ Mosaic.prototype.messaging = function(options, mosaic) {
             );
         };
         // set mosaic.sub to be a postal Subscriber
-        this.msg.sub = new PostalSubscriber();
+        this.sub = new PostalSubscriber();
 
         // set mosaic.pub to be a postal Publisher
-        this.msg.pub = new PostalPublisher();
+        this.pub = new PostalPublisher();
 
         // Add a new channel and make it available via publish and subscribe interface
         Mosaic.prototype.addChannel = function (channelName) {
             mosaic.log('addChannel: ' + channelName);
-            if (!mosaic.msg.channels.hasOwnProperty(channelName)) {
-                mosaic.msg.channels[channelName] = postal.channel(channelName);
-                mosaic.msg.pub.add(channelName);
-                mosaic.msg.sub.add(channelName);
+            if (!mosaic.channels.hasOwnProperty(channelName)) {
+                mosaic.channels[channelName] = postal.channel(channelName);
+                mosaic.pub.add(channelName);
+                mosaic.sub.add(channelName);
             }
-            return mosaic.msg.channels[channelName];
+            return mosaic.channels[channelName];
         }
 
         mosaic.log('DONE', this);

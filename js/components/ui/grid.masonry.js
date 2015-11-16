@@ -20,7 +20,7 @@ Mosaic.prototype.masonry = function(options, mosaic) {
         var $container = $(mosaic.config.masonry.container);
 
         if (Masonry && $container) {
-            this.log('Initialising Mosaic.grid extension', this);
+            mosaic.log('Initialising Mosaic.grid extension', this);
 
             $container.masonry(mosaic.config.masonry);
 

@@ -601,12 +601,4 @@ Mosaic.prototype.data = function (options, mosaic) {
             );
         }
     };
-
-    function setup() {
-        $.ajaxError(function (event, jqxhr, settings, thrownError) {
-            mosaic.log("Ajax error", thrownError);
-        })
-    }
-
-    setup();
 };

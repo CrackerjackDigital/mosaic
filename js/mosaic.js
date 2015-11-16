@@ -19,7 +19,7 @@ var Mosaic = function (options) {
     };
 
     this.log = function(message  /*, details, ... */) {
-        if (this.config.debug) {
+        if (this.config && this.config.debug) {
             this.dump(message);
 
             if (2 == (this.config.debug & 2)) {
@@ -35,6 +35,7 @@ var Mosaic = function (options) {
 
     this.init = function(extensions) {
         if (!window.mosaic) {
+	        this.log('Initialising mosaic')
             window.mosaic = this;
 
             mosaic.config = jQuery.extend(true, {}, mosaic.config || {}, defaults, options);
@@ -71,14 +72,14 @@ var Mosaic = function (options) {
                 _.forEach(
                     mosaic.config.channels,
                     function (channelName) {
-                        this.log('Adding default channel handler ' + channelName);
+                        mosaic.log('Adding default channel handler ' + channelName);
 
-                        this.pub[channelName] = function (message) {
+                        mosaic.pub[channelName] = function (message) {
                             mosaic.log('Default Channel!');
                             mosaic.log.apply(mosaic, arguments);
                         }.bind(this);
 
-                        this.sub[channelName] = function (fn, filters) {
+                        mosaic.sub[channelName] = function (fn, filters) {
                             mosaic.log('Default Channel!');
                             mosaic.log.apply(mosaic, arguments);
                         }.bind(this);

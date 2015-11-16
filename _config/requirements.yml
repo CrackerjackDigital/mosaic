@@ -28,7 +28,6 @@ MosaicModule:
       components/object-hash/object-hash-built.js: true
       js/mosaic.js: true
       js/mosaic.jst: true
-      js/components/util/hash.object-hash.js: true
       js/components/util/strings.js: true
       js/components/data/data.jquery.js: true
       js/components/messaging/messaging.postal.js: true
