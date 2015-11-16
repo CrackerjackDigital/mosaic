@@ -3,6 +3,10 @@ var Mosaic = function (options) {
         debug: 7           // 0 = none, 1 = minimum, 2 = more, 4 = debug messaging
     };
 
+	// initialise aspects
+	this.ui = {};
+	this.util = {};
+
     /* LOGGING */
 
     this.dump = function(output) {

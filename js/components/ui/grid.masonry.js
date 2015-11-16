@@ -12,8 +12,8 @@ Mosaic.prototype.masonry = function(options, mosaic) {
 
     mosaic.config.masonry = jQuery.extend({}, mosaic.config.masonry || {}, defaults, options);
 
-    if (_.isUndefined(this.ui)) {
-        this.ui = {};
+    if (_.isUndefined(mosaic.ui)) {
+        mosaic.ui = {};
     }
 
     mosaic.ui.grid = new function() {
@@ -32,14 +32,14 @@ Mosaic.prototype.masonry = function(options, mosaic) {
              */
             this.append = function(items) {
                 mosaic.log('appending', items);
-                this.appended(items);
+                this.extend(items);
             };
             /**
-             * Tell masonry some items where appended
+             * Tell masonry some items where added
              * @param items
              * @api
              */
-            this.appended = function(items) {
+            this.extend = function(items) {
                 $container.masonry('appended', items);
             };
             /**
@@ -69,7 +69,7 @@ Mosaic.prototype.masonry = function(options, mosaic) {
                 $container.masonry('layout');
             };
         } else {
-            this.append = this.prepend = this.appended = this.prepended = this.redraw = function() {
+            this.append = this.prepend = this.extended = this.prepended = this.redraw = function() {
                 mosaic.log('Masonry library not loaded or invalid container');
             };
         }

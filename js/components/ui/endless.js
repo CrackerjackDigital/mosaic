@@ -18,7 +18,7 @@ Mosaic.prototype.endless = function(options, mosaic) {
 	    // subscribe to end of endless loading on ui channel to fire appended on grid
         mosaic.sub.ui(
             function(items) {
-                this.grid.appended(items);
+                mosaic.ui.grid.extend(items);
             }.bind(this),
             this.config.ias.topics.end
         );
