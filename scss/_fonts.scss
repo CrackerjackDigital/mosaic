@@ -1,3 +1,10 @@
+/**
+ * Fonts
+ */
+
+// import font-awesome settings
+@import '../components/font-awesome/scss/font-awesome';
+
 @mixin content-font {
     font-family: $content-font-family;
     font-size: $content-font-size;

@@ -1,5 +1,7 @@
 // application variables, generally should be declaeed before mosaic is included
 $default-font-family: Helvetica, Arial, sans-serif !default;
+// load font-awesome fonts directly from mosaic module
+$fa-font-path: '/mosaic/components/font-awesome/fonts' !default;
 
 $glyph-font-family: 'FontAwesome' !default;
 $glyph-font-size: 1.4em !default;
