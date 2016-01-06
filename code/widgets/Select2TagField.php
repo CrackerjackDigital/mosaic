@@ -31,10 +31,13 @@ class Select2TagField extends TextField {
     /**
      * Set the available options.
      *
-     * @param array $options
+     * @param array|SS_Map $options
      * @return $this
      */
-    public function setOptions(array $options) {
+    public function setOptions($options) {
+        if ($options instanceof SS_Map) {
+            $options = $options->toArray();
+        }
         $this->setAttribute('tags', implode(static::tag_seperator(), $options));
         return $this;
     }
