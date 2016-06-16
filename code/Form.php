@@ -95,12 +95,26 @@ class MosaicForm extends ModularForm {
 	 * @return string
 	 */
 	public static function encodeAttributeValue($value) {
-		return htmlentities(
-			$value,
-			static::AttributeQuoteStyle,
-			static::AttributeCharset,
-			static::AttributeDoubleEncode
-		);
+		if (is_array($value)) {
+			$encodedValue = [];
+			foreach ($value as $key => $val) {
+				$encodedValue[] = htmlentities(
+					$val,
+					static::AttributeQuoteStyle,
+					static::AttributeCharset,
+					static::AttributeDoubleEncode
+				);
+			}
+			return $encodedValue;
+
+		} else {
+			return htmlentities(
+				$value,
+				static::AttributeQuoteStyle,
+				static::AttributeCharset,
+				static::AttributeDoubleEncode
+			);
+		}
 	}
 
 	/**
