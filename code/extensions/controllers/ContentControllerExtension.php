@@ -2,7 +2,7 @@
 /**
  * Attaches to ContentController and configures requirements for mosaic.
  */
-class MosaicContentControllerExtension extends ModularContentControllerExtension {
+class MosaicContentControllerExtension extends Modular\ContentControllerExtension {
     /**
      *  Loads requirements for after main controller init has been called.
      */

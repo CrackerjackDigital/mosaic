@@ -5,19 +5,18 @@
  *
  * - Adds Mosaic Data Attributes to getAttributesHTML
  */
-class MosaicForm extends ModularForm {
+class MosaicForm extends Modular\Form {
 	use Modular\json;
 
-	const AttributeCharset = 'UTF-8';
+	const AttributeCharset      = 'UTF-8';
 	const AttributeDoubleEncode = false;
-	const AttributeQuoteStyle = ENT_COMPAT;
+	const AttributeQuoteStyle   = ENT_COMPAT;
 
 	// prefix excluding terminal '-'
 	private static $attribute_prefix = 'data-mosaic';
 
 	// automatically merge MosaicDataAttributes in getAttribute call.
 	private static $attribute_merge = true;
-
 
 	public function __construct(\Controller $controller, $name, \FieldList $fields, \FieldList $actions, $validator = null) {
 		if (!$controller instanceof Controller) {
@@ -36,6 +35,7 @@ class MosaicForm extends ModularForm {
 	public function controller() {
 		return $this->controller;
 	}
+
 	/**
 	 * Return data attributes for the model being shown
 	 * prefixed by 'data-mosaic-' :
@@ -52,9 +52,9 @@ class MosaicForm extends ModularForm {
 
 		return $this->encodeAttributes(
 			[
-			    'id' => $controller->getModelID(),
-			    'state' => $this->modelState(),
-			    'meta' => $this->modelMeta(),
+				'id'    => $controller->getModelID(),
+				'state' => $this->modelState(),
+				'meta'  => $this->modelMeta(),
 			],
 			$this->config()->get('attribute_prefix')
 		);
@@ -62,6 +62,7 @@ class MosaicForm extends ModularForm {
 
 	/**
 	 * Override to merge in MosaicDataAttributes if config.attribute_merge is true.
+	 *
 	 * @return array
 	 */
 	public function getAttributes() {
@@ -75,13 +76,16 @@ class MosaicForm extends ModularForm {
 	 * Return passed in attributes with key prefixed as for data- attribute and
 	 * values encoded to be valid html attributes.
 	 *
-	 * @param array $attributes
+	 * @param array  $attributes
+	 * @param string $prefix e.g. 'data'
 	 * @return array
 	 */
-	public static function encodeAttributes(array $attributes, $prefix) {
+	public static function encodeAttributes(array $attributes, $prefix = '') {
+		$prefix = $prefix ? (rtrim($prefix, '-') . '-')  : '';
+
 		foreach ($attributes as $name => $value) {
-			$attributes["$prefix-$name"] = self::encodeAttributeValue($value);
-			unset($attributes[$name]);
+			$attributes["$prefix$name"] = self::encodeAttributeValue($value);
+			unset($attributes[ $name ]);
 		}
 		return $attributes;
 	}
@@ -119,6 +123,7 @@ class MosaicForm extends ModularForm {
 
 	/**
 	 * Return the current state of the model.
+	 *
 	 * @return string
 	 */
 	protected function modelState() {
@@ -129,7 +134,7 @@ class MosaicForm extends ModularForm {
 		// call trait to encode
 		return $this->encode(
 			array_map(
-				function($field) {
+				function ($field) {
 					return $this->encodeAttributeValue($field->Value());
 				},
 				$fields
@@ -139,6 +144,7 @@ class MosaicForm extends ModularForm {
 
 	/**
 	 * Return meta-data about the model as a whole, including fields.
+	 *
 	 * @return string
 	 */
 	protected function modelMeta() {
@@ -146,8 +152,8 @@ class MosaicForm extends ModularForm {
 		$validator = $this->getValidator();
 
 		$meta = [
-			'model' => $this->controller()->getModelClass(),
-		    'fields' => [],
+			'model'  => $this->controller()->getModelClass(),
+			'fields' => [],
 		];
 
 		if ($validator) {
@@ -156,7 +162,7 @@ class MosaicForm extends ModularForm {
 			foreach ($fields as $field) {
 				$fieldName = $field->getName();
 
-				$meta['fields'][$fieldName] = $this->fieldMeta($field);
+				$meta['fields'][ $fieldName ] = $this->fieldMeta($field);
 			}
 		}
 		return $this->encode($meta);
@@ -164,6 +170,7 @@ class MosaicForm extends ModularForm {
 
 	/**
 	 * Return meta-data about a single field
+	 *
 	 * @param \FormField $field
 	 * @return array
 	 */
@@ -177,14 +184,14 @@ class MosaicForm extends ModularForm {
 		}
 
 		return $meta + [
-			'required' => $this->getValidator()->fieldIsRequired($fieldName),
-		    'name' => $fieldName,
-		    'title' => $field->Title(),
-		    'leftTitle' => $field->LeftTitle(),
-		    'rightTitle' => $field->RightTitle(),
-		    'css' => $field->CSSClasses(),
-		    'readOnly' => $field->isReadonly(),
-		    'disabled' => $field->isDisabled()
+			'required'   => $this->getValidator()->fieldIsRequired($fieldName),
+			'name'       => $fieldName,
+			'title'      => $field->Title(),
+			'leftTitle'  => $field->LeftTitle(),
+			'rightTitle' => $field->RightTitle(),
+			'css'        => $field->CSSClasses(),
+			'readOnly'   => $field->isReadonly(),
+			'disabled'   => $field->isDisabled(),
 		];
 	}
 }
