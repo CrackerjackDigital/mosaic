@@ -19,7 +19,8 @@
 		"php": ">=5.3.2",
 		"silverstripe/framework": ">=3.1",
 		"composer/installers": "*",
-		"robloach/component-installer": "*"
+		"robloach/component-installer": "*",
+		"crackerjackdigital/modular": "*"
 	},
 	"minimum-stability": "dev"
 }
