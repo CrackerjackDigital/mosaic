@@ -20,7 +20,7 @@
 		"silverstripe/framework": ">=3.1",
 		"composer/installers": "*",
 		"robloach/component-installer": "*",
-		"crackerjackdigital/modular": "*"
+		"crackerjackdigital/silverstripe-modular": "*"
 	},
 	"minimum-stability": "dev"
 }
