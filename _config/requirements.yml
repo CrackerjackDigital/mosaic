@@ -1,7 +1,7 @@
 ---
 Name: mosaic-requirements
 ---
-MosaicModule:
+MosaicApplication:
   script_types:
     js: true
     css: true
@@ -12,20 +12,20 @@ MosaicModule:
     jst: false
   requirements:
     block:
-      - '/framework/thirdparty/jquery/*'
+      '/framework/thirdparty/jquery/*': true
     before:
-      components/jquery/jquery.min.js: true
-      components/modernizr/modernizr.js: true
-      components/ckeditor/ckeditor.js: true
+      /components/jquery/jquery.min.js: true
+      /components/modernizr/modernizr.js: true
+      /components/ckeditor/ckeditor.js: true
     after:
-      components/lodash/lodash.min.js: true
+      /components/lodash/lodash.min.js: true
 #      components/json-query/json-query-built.js: true
-      components/masonry/masonry.pkgd.js: true
-      components/postal.js/lib/postal.js: true
-      components/fotorama/fotorama-built.js: true
-      components/select2/select2-built.js: true
-      components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
-      components/object-hash/object-hash-built.js: true
+      /components/masonry/masonry.pkgd.js: true
+      /components/postal.js/lib/postal.js: true
+      /components/fotorama/fotorama-built.js: true
+      /components/select2/select2-built.js: true
+      /components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
+      /components/object-hash/object-hash-built.js: true
       js/mosaic.js: true
       js/mosaic.jst: true
       js/components/util/strings.js: true

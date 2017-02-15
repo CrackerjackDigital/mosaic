@@ -24,7 +24,7 @@ class MosaicForm extends Modular\Form {
 			$controller = Controller::curr();
 		}
 		if (!$controller instanceof MosaicFormControllerInterface) {
-			throw new MosaicException("Controller doesn't implement MosaicFormControllerInterface (it should)");
+//			throw new MosaicException("Controller doesn't implement MosaicFormControllerInterface (it should)");
 		}
 		parent::__construct($controller, $name, $fields, $actions, $validator);
 	}
@@ -74,7 +74,8 @@ class MosaicForm extends Modular\Form {
 
 	/**
 	 * Return passed in attributes with key prefixed as for data- attribute and
-	 * values encoded to be valid html attributes.
+	 * values encoded to be valid html attributes. Existing, unencoded attributes are removed. Attribute names which
+	 * already start with prefix are unchanged.
 	 *
 	 * @param array  $attributes
 	 * @param string $prefix e.g. 'data'
@@ -84,8 +85,10 @@ class MosaicForm extends Modular\Form {
 		$prefix = $prefix ? (rtrim($prefix, '-') . '-')  : '';
 
 		foreach ($attributes as $name => $value) {
-			$attributes["$prefix$name"] = self::encodeAttributeValue($value);
-			unset($attributes[ $name ]);
+			if (substr($name, 0, strlen($prefix)) != $prefix) {
+				$attributes["$prefix$name"] = static::encodeAttributeValue($value);
+				unset($attributes[ $name ]);
+			}
 		}
 		return $attributes;
 	}

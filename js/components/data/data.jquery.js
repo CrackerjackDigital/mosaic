@@ -422,7 +422,7 @@ Mosaic.prototype.data = function (options, mosaic) {
     }
 
     /**
-     * Map a model to an endpoint, e.g 'Member' => 'member', 'OrganisationModel' => notification
+     * Map a model to an endpoint, e.g 'Member' => 'member', 'SocialOrganisation' => notification
      * @param model
      * @returns {*}
      */

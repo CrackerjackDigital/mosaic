@@ -3,10 +3,9 @@ Name: mosaic-config
 After:
   - '#dropzone'
 ---
-
-ContentController:
-  extensions:
-    - MosaicContentControllerExtension
+Injector:
+  Application:
+    class: MosaicApplication
 
 FileField:
   extensions:

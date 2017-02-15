@@ -5,8 +5,8 @@
  */
 class MosaicImageExtension extends Modular\ModelExtension {
     private static $belongs_many_many = [
-        'Organisation' => 'OrganisationModel',
-        'Post' => 'PostModel'
+        'SocialOrganisation' => 'SocialOrganisation',
+        'Post' => 'Post'
     ];
 
     public function getUploadFields() {

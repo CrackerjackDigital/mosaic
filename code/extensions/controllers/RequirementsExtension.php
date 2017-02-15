@@ -2,19 +2,19 @@
 /**
  * Attaches to ContentController and configures requirements for mosaic.
  */
-class MosaicContentControllerExtension extends Modular\ContentControllerExtension {
+class MosaicRequirementsExtension extends Modular\ContentControllerExtension {
     /**
      *  Loads requirements for after main controller init has been called.
      */
     public function onBeforeInit() {
-        MosaicModule::requirements($this(), MosaicModule::BeforeInit);
+        Application::factory()->requirements(Application::BeforeInit);
     }
 
     /**
      *  Loads requirements for after main controller init has been called.
      */
     public function onAfterInit() {
-        MosaicModule::requirements($this(), MosaicModule::AfterInit);
+	    Application::factory()->requirements(Application::AfterInit);
     }
 
 

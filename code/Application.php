@@ -1,7 +1,11 @@
 <?php
+use Modular\requirements;
+
 /**
  * Mosaic Module settings and convenience methods.
  */
-class MosaicModule extends Modular\Module {
+class MosaicApplication extends Modular\Application {
+	use requirements;
+
 	private static $module_path = '/mosaic';
 }
