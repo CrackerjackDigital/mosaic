@@ -19,7 +19,6 @@ MosaicApplication:
       /components/ckeditor/ckeditor.js: true
     after:
       /components/lodash/lodash.min.js: true
-#      components/json-query/json-query-built.js: true
       /components/masonry/masonry.pkgd.js: true
       /components/postal.js/lib/postal.js: true
       /components/fotorama/fotorama-built.js: true
@@ -34,7 +33,6 @@ MosaicApplication:
       js/components/ui/ias.js: true
       js/components/ui/grid.masonry.js: true
       js/components/ui/endless.js: true
-#      js/components/ui/badger.js: true
       js/message-bus.js: true
       js/widgets/sidebar.js: true
       js/widgets/expando.js: true
