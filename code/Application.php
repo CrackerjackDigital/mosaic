@@ -6,7 +6,7 @@ class MosaicApplication extends Object {
 	private static $module_path = '/mosaic';
 
 	const BeforeInit = 'before';
-	const AfterInto = 'after';
+	const AfterInit = 'after';
 	const BothInit = 'both';
 
 	/**
