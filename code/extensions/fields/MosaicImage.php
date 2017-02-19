@@ -3,7 +3,7 @@
 /**
  * Add reverse relationships from Image to Groups, Organisations, Posts.
  */
-class MosaicImageExtension extends Modular\ModelExtension {
+class MosaicImageExtension extends ModelExtension {
     private static $belongs_many_many = [
         'SocialOrganisation' => 'SocialOrganisation',
         'Post' => 'Post'
