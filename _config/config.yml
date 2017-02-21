@@ -4,7 +4,8 @@ After:
   - '#dropzone'
 ---
 Injector:
-  Application: MosaicApplication
+  Application:
+    class: MosaicApplication
 
 FileField:
   extensions:

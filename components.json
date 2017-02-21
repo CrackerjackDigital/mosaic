@@ -229,7 +229,8 @@
 				"extra": {
 					"component": {
 						"scripts": [
-							"dist/object_hash.js"
+							"dist/object_hash.js",
+							"dist/object_hash.js.map"
 						]
 					}
 				}

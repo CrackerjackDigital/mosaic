@@ -3,11 +3,13 @@
  * Attaches to ContentController and configures requirements for mosaic.
  */
 class MosaicRequirementsExtension extends Extension {
+
     /**
      *  Loads requirements for after main controller init has been called.
      */
     public function onBeforeInit() {
-        Injector::inst()->get('Application')->requirements(Application::BeforeInit);
+    	$app = Injector::inst()->get('Application');
+        $app->requirements(Application::BeforeInit);
     }
 
     /**
