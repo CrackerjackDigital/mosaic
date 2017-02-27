@@ -7,6 +7,10 @@ Injector:
   Application:
     class: MosaicApplication
 
+ContentController:
+  extensions:
+    - MosaicRequirementsExtension
+
 FileField:
   extensions:
     - MosaicFileFieldExtension

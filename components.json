@@ -26,7 +26,8 @@
 		"ckeditor/ckeditor": "4.5.4",
 		"artpolikarpov/fotorama": "4.6.4",
 		"ivaynberg/select2": "3.5.2",
-		"puleos/object-hash": "0.9.*"
+		"puleos/object-hash": "0.9.*",
+		"crackerjackdigital/modular": "*"
 	},
 	"repositories": [
 		{

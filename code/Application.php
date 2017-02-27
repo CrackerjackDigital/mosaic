@@ -3,7 +3,7 @@
 /**
  * Mosaic Module settings and convenience methods.
  */
-class MosaicApplication extends Object {
+class MosaicApplication extends Modular\Application {
 	private static $module_path = '/mosaic';
 
 	const BeforeInit = 'before';            // include in onBeforeInit
@@ -43,6 +43,7 @@ class MosaicApplication extends Object {
 	 *
 	 * @param string $beforeOrAfterInit wether to include before or after requirements
 	 * @param string $basePath          base path to include relative requirements from, e.g module path or current theme if null config.module_path is used
+	 * @return $this|void
 	 */
 	public function requirements($beforeOrAfterInit = self::BothInit, $basePath = null) {
 		$ancestry = ClassInfo::ancestry(get_class($this));
