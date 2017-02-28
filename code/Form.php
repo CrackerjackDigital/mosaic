@@ -1,4 +1,5 @@
 <?php
+use Modular\Traits\json;
 
 /**
  * Adds hooks for mosaic data layer to forms.
@@ -6,7 +7,7 @@
  * - Adds Mosaic Data Attributes to getAttributesHTML
  */
 class MosaicForm extends Modular\Form {
-	use Modular\json;
+	use json;
 
 	const AttributeCharset      = 'UTF-8';
 	const AttributeDoubleEncode = false;
@@ -34,6 +35,10 @@ class MosaicForm extends Modular\Form {
 	 */
 	public function controller() {
 		return $this->controller;
+	}
+
+	public function model() {
+		return $this->controller()->getModelInstance();
 	}
 
 	/**
