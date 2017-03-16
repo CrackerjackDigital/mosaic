@@ -19,6 +19,4 @@ class MosaicRequirementsExtension extends Extension {
 	    Injector::inst()->get('Application')
 		    ->requirements(Application::AfterInit);
     }
-
-
 }

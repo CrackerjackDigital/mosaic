@@ -45,7 +45,7 @@ class MosaicApplication extends Modular\Application {
 	 * @param string $basePath          base path to include relative requirements from, e.g module path or current theme if null config.module_path is used
 	 * @return $this|void
 	 */
-	public function requirements($beforeOrAfterInit = self::BothInit, $basePath = null) {
+	public function xrequirements($beforeOrAfterInit = self::BothInit, $basePath = null) {
 		$ancestry = ClassInfo::ancestry(get_class($this));
 		foreach ($ancestry as $className) {
 			$config = Config::inst()->forClass($className);
