@@ -11,15 +11,18 @@ class Select2Field extends DropdownField {
     // this is default library install path with composer
     private static $library_path = 'components/select2/';
 
-    /**
-     * Auto-populate from current controller's model
-     * @param string $name
-     * @param null $title
-     * @param null $source
-     * @param null $value
-     * @param null $form
-     * @param null $emptyString
-     */
+	/**
+	 * Auto-populate from current controller's model
+	 *
+	 * @param string $name
+	 * @param null   $title
+	 * @param null   $source
+	 * @param null   $value
+	 * @param null   $form
+	 * @param null   $emptyString
+	 *
+	 * @throws \InvalidArgumentException
+	 */
     public function __construct($name, $title = null, $source = null, $value = null, $form = null, $emptyString = null) {
         if (is_null($source)) {
             $controller = Controller::curr();
@@ -63,6 +66,6 @@ class Select2Field extends DropdownField {
         }
         parent::__construct($name, $title, $source, $value, $form);
 
-        $this->addExtraClass(static::CSSClass);
+        $this->addExtraClass(self::CSSClass);
     }
 }

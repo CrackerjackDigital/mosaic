@@ -38,7 +38,7 @@ class Select2TagField extends TextField {
         if ($options instanceof SS_Map) {
             $options = $options->toArray();
         }
-        $this->setAttribute('tags', implode(static::tag_seperator(), $options));
+        $this->setAttribute('tags', implode(static::tag_seperator(), $options ?: []));
         return $this;
     }
 
