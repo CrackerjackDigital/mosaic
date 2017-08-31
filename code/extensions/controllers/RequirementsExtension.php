@@ -8,6 +8,7 @@ class MosaicRequirementsExtension extends Extension {
      *  Loads requirements for before main controller init has been called.
      */
     public function onBeforeInit() {
+    	/** @var \Modular\Application $app */
     	$app = Injector::inst()->get('Application');
 	    $app->requirements(Application::BeforeInit);
     }
