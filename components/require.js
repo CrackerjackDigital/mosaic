@@ -17,10 +17,6 @@ var components = {
             "main": "modernizr-built.js"
         },
         {
-            "name": "select2",
-            "main": "select2-built.js"
-        },
-        {
             "name": "lodash",
             "main": "lodash-built.js"
         },
@@ -31,6 +27,10 @@ var components = {
         {
             "name": "object-hash",
             "main": "object-hash-built.js"
+        },
+        {
+            "name": "select2",
+            "main": "select2-built.js"
         },
         {
             "name": "infinite-ajax-scroll",
