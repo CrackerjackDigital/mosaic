@@ -21,13 +21,11 @@
 		"components/modernizr": "2.x",
 		"components/masonry": "3.2.2",
 		"webcreate/infinite-ajax-scroll": "2.2.*",
-		"select2/select2": "4.0.*",
+		"select2/select2": "3.5.x",
 		"postaljs/postal.js": "1.0.7",
 		"ckeditor/ckeditor": "4.5.4",
 		"artpolikarpov/fotorama": "4.6.4",
-		"ivaynberg/select2": "3.5.2",
-		"puleos/object-hash": "0.9.*",
-		"crackerjackdigital/modular": "*"
+		"puleos/object-hash": "0.9.*"
 	},
 	"repositories": [
 		{
@@ -152,17 +150,18 @@
 			"package": {
 				"name": "select2/select2",
 				"type": "component",
-				"version": "4.0.0",
+				"version": "3.5.4",
 				"dist": {
 					"type": "zip",
-					"url": "https://github.com/select2/select2/archive/4.0.0.zip"
+					"url": "https://github.com/select2/select2/archive/3.5.4.zip"
 				},
 				"extra": {
 					"component": {
 						"files": [
-							"src/scss/*/*/*",
-							"src/scss/*/*",
-							"src/scss/*"
+							"*.css",
+							"*.js",
+							"*.png",
+							"*.gif"
 						]
 					}
 				}

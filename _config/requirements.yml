@@ -22,7 +22,7 @@ MosaicApplication:
       components/masonry/masonry.pkgd.js: true
       components/postal.js/lib/postal.js: true
       components/fotorama/fotorama-built.js: true
-      components/select2/select2-built.js: true
+      components/select2/select2.min.js: true
       components/infinite-ajax-scroll/infinite-ajax-scroll-built.js: true
       components/puleos/object-hash-built.js: true
       js/mosaic.js: true
