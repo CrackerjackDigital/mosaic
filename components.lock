@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b3d71d0f1731bf7c83b16472e9763c5",
+    "hash": "c03028a84e1a4fd5ff1a23af91d2a427",
+    "content-hash": "a2afc773abbd0b2c382eeac74e4a0476",
     "packages": [
         {
             "name": "artpolikarpov/fotorama",
@@ -109,7 +110,7 @@
             ],
             "description": "jQuery JavaScript Library",
             "homepage": "http://jquery.com",
-            "time": "2015-06-08T13:35:17+00:00"
+            "time": "2015-06-08 13:35:17"
         },
         {
             "name": "components/masonry",
@@ -152,7 +153,7 @@
             ],
             "description": "Cascading grid layout library",
             "homepage": "http://masonry.desandro.com",
-            "time": "2015-02-11T14:35:33+00:00"
+            "time": "2015-02-11 14:35:33"
         },
         {
             "name": "components/modernizr",
@@ -221,7 +222,7 @@
                 "browser",
                 "feature detection"
             ],
-            "time": "2014-10-08T13:59:52+00:00"
+            "time": "2014-10-08 13:59:52"
         },
         {
             "name": "composer/installers",
@@ -229,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
+                "reference": "b840fd2500dacddf0da3e6e4726001aaf103a020"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b840fd2500dacddf0da3e6e4726001aaf103a020",
+                "reference": "b840fd2500dacddf0da3e6e4726001aaf103a020",
                 "shasum": ""
             },
             "require": {
@@ -276,14 +277,11 @@
             "keywords": [
                 "Craft",
                 "Dolibarr",
-                "Eliasis",
                 "Hurad",
                 "ImageCMS",
                 "Kanboard",
-                "Lan Management System",
                 "MODX Evo",
                 "Mautic",
-                "Maya",
                 "OXID",
                 "Plentymarkets",
                 "Porto",
@@ -304,24 +302,20 @@
                 "croogo",
                 "dokuwiki",
                 "drupal",
-                "eZ Platform",
                 "elgg",
                 "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
-                "itop",
                 "joomla",
                 "kohana",
                 "laravel",
-                "lavalite",
                 "lithium",
                 "magento",
                 "mako",
                 "mediawiki",
                 "modulework",
                 "moodle",
-                "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
@@ -330,7 +324,6 @@
                 "roundcube",
                 "shopware",
                 "silverstripe",
-                "sydes",
                 "symfony",
                 "typo3",
                 "wordpress",
@@ -338,7 +331,50 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-08-09T07:53:48+00:00"
+            "time": "2016-11-23 19:56:18"
+        },
+        {
+            "name": "ivaynberg/select2",
+            "version": "3.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/select2/select2.git",
+                "reference": "6633cda9061d9fc65075dd140c63f9a6adbcbd72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/select2/select2/zipball/6633cda9061d9fc65075dd140c63f9a6adbcbd72",
+                "reference": "6633cda9061d9fc65075dd140c63f9a6adbcbd72",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": ">=1.7.1",
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "select2.js"
+                    ],
+                    "files": [
+                        "select2.js",
+                        "select2_locale_*.js",
+                        "select2.css",
+                        "select2-bootstrap.css",
+                        "select2-spinner.gif",
+                        "select2.png",
+                        "select2x2.png"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Select2 is a jQuery based replacement for select boxes.",
+            "homepage": "http://ivaynberg.github.io/select2/",
+            "time": "2014-11-01 18:43:44"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -415,7 +451,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2016-11-11T18:43:20+00:00"
+            "time": "2016-11-11 18:43:20"
         },
         {
             "name": "lodash/lodash",
@@ -471,8 +507,7 @@
             "extra": {
                 "component": {
                     "scripts": [
-                        "dist/object_hash.js",
-                        "dist/object_hash.js.map"
+                        "dist/object_hash.js"
                     ]
                 }
             }
@@ -523,70 +558,49 @@
                 }
             ],
             "description": "Allows installation of Components via Composer.",
-            "time": "2016-07-16T01:43:54+00:00"
+            "time": "2016-07-16 01:43:54"
         },
         {
             "name": "select2/select2",
-            "version": "4.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/select2/select2.git",
-                "reference": "16f6b10628f9000918708cef9b3da615119cf6d6"
-            },
+            "version": "4.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/select2/select2/zipball/16f6b10628f9000918708cef9b3da615119cf6d6",
-                "reference": "16f6b10628f9000918708cef9b3da615119cf6d6",
-                "shasum": ""
-            },
-            "require": {
-                "robloach/component-installer": "*"
+                "url": "https://github.com/select2/select2/archive/4.0.0.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "component",
             "extra": {
                 "component": {
-                    "scripts": [
-                        "dist/js/select2.js"
-                    ],
-                    "styles": [
-                        "dist/css/select2.css"
-                    ],
                     "files": [
-                        "dist/js/select2.js",
-                        "dist/js/i18n/*.js",
-                        "dist/css/select2.css"
+                        "src/scss/*/*/*",
+                        "src/scss/*/*",
+                        "src/scss/*"
                     ]
                 }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Select2 is a jQuery based replacement for select boxes.",
-            "homepage": "https://select2.org/",
-            "time": "2017-09-24T16:09:35+00:00"
+            }
         },
         {
             "name": "symfony/process",
-            "version": "3.4.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "5126fc58beb624763383c178779845bbd04c35ab"
+                "reference": "b2a461e266f50a20c4d81b5b88153dde4369e94b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/5126fc58beb624763383c178779845bbd04c35ab",
-                "reference": "5126fc58beb624763383c178779845bbd04c35ab",
+                "url": "https://api.github.com/repos/symfony/process/zipball/b2a461e266f50a20c4d81b5b88153dde4369e94b",
+                "reference": "b2a461e266f50a20c4d81b5b88153dde4369e94b",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9|>=7.0.8"
+                "php": ">=5.5.9"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.4-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -613,7 +627,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-10-05T22:24:36+00:00"
+            "time": "2016-11-24 10:43:03"
         },
         {
             "name": "webcreate/infinite-ajax-scroll",
