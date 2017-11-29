@@ -7,7 +7,7 @@
 			var $this = $(this),
 				seperator = $this.attr('tagseperator') ? $this.attr('tagseperator') : ',',
 				tags = $this.attr('tags') ? $this.attr('tags').split(seperator) : false,
-				placeholder = $this.attr('placeholder')
+				placeholder = $this.attr('placeholder'),
 				options = tags ? {
 					tags: tags,
 					tokenSeparators: [ seperator ],
