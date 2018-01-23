@@ -1,6 +1,6 @@
 (function() {
 	// subscribe to ui channel to receive show messages
-	console.log('subscribing to ui channel for modal.show messages');
+	// console.log('subscribing to ui channel for modal.show messages');
 	$.messageBus.ui.subscribe('modal.show', show);
 	$.messageBus.ui.subscribe('modal.hide', hide);
 
@@ -62,7 +62,7 @@
 
 		$(document).on('scroll', positionModal);
 
-		console.log('showing modal');
+		// console.log('showing modal');
 
 
 
@@ -94,11 +94,11 @@
 		var off = nav.offset(),
 			top;
 
-		console.log(off);
+		// console.log(off);
 
 		var scroll = window.pageYOffset || document.documentElement.scrollTop;
 
-		console.log(scroll);
+		// console.log(scroll);
 
 		if (scroll < 200) {
 			body.removeClass('fixed-top');
@@ -107,7 +107,7 @@
 			body.addClass('fixed-top');
 			top = navHeight;
 		}
-		console.log('top ' + top);
+		// console.log('top ' + top);
 		body.css({
 			top: top + 'px'
 		});

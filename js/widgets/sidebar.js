@@ -23,7 +23,7 @@
 				return ($(this).data('id') === data.id) && ($(this).data('class') === data.class);
 			}
 		).length === 0) {
-			console.log('adding new item');
+			// console.log('adding new item');
 			data.index = $('.has-favourites ul.list li').length + 1;
 
 			$('.has-favourites ul.list')
@@ -35,9 +35,6 @@
 	// remove list item from favourites when item is unfollowed
 	function unfollow(message) {
 		var newData = message.newData;
-
-		console.log('sidebar unfollowing:');
-		console.log(newData);
 
 		$('.has-favourites li', sidebar).filter(
 			function () {

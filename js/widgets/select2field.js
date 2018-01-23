@@ -16,13 +16,13 @@
 					placeholder: placeholder
 				};
 
-			console.log(options);
+			// console.log(options);
 
 			if ($this.hasClass('select2field-manual')) {
-				console.log('skipping manual bound select2 field');
+				// console.log('skipping manual bound select2 field');
 			} else {
-				console.log('select2ifiying');
-				console.log($this);
+				// console.log('select2ifiying');
+				// console.log($this);
 
 				// add options to options map which may contain tags if tags attribute set.
 				$this.select2(

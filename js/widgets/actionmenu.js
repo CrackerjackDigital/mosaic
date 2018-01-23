@@ -1,10 +1,10 @@
 (function() {
-	console.log('Hooking action-links');
+	// console.log('Hooking action-links');
 
 	var channel = $.messageBus.actions;
 	// subscribe to messages and kick it all off.
 	(function (channel) {
-		console.log('action-menu initialising');
+		// console.log('action-menu initialising');
 
 		// lifecycle and outcomes of clicking an action-menu item
 		channel.subscribe('action-menu.bind', bind);
@@ -31,11 +31,11 @@
 	})(channel);
 
 	function bind(message) {
-		console.log('bind');
+		// console.log('bind');
 
 		// register action link click handler on action-links
 		$('menu.action-menu').on('click', 'li a', function(ev) {
-			console.log('clicked');
+			// console.log('clicked');
 
 			channel.publish('action-menu.clicked', {
 				event: ev,
@@ -69,7 +69,7 @@
 	}
 	// update item in place then done.
 	function success(message) {
-		console.log('success ' + message.statusText);
+		// console.log('success ' + message.statusText);
 
 		var listItem = message.listItem,
 			data = $.extend({}, listItem.data());
@@ -105,7 +105,7 @@
 	}
 	// add error indicators then done.
 	function error(message) {
-		console.log('got error');
+		// console.log('got error');
 
 		// add an error class to the list item
 		message.listItem.addClass('error');
@@ -128,7 +128,7 @@
 			event = message.event,
 			srcURI = listItem.data('doit') + '/modal';
 
-		console.log('loading modal from ' + srcURI);
+		// console.log('loading modal from ' + srcURI);
 
 		event.preventDefault();
 
@@ -137,7 +137,7 @@
 		).then(
 			// success
 			function (result, statusText) {
-				console.log('got result for modal, showing');
+				// console.log('got result for modal, showing');
 				$.messageBus.ui.publish(
 					'modal.show',
 					$.extend(
@@ -151,7 +151,7 @@
 			},
 			// fail
 			function (result, statusText) {
-				console.log('failed to get result');
+				// console.log('failed to get result');
 				$.messageBus.ui.publish(
 					'modal.hide'
 				);

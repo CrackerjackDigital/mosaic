@@ -36,7 +36,7 @@ Mosaic.prototype.messaging = function(options, mosaic) {
         _.forEach(
             this.config.messaging.channels,
             function (channelName) {
-                console.log('Adding channel ' + channelName + ' to mosaic map');
+                // console.log('Adding channel ' + channelName + ' to mosaic map');
                 mosaic.channels[channelName] = postal.channel(channelName);
             },
             this
