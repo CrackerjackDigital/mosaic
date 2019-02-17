@@ -229,12 +229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b"
+                "reference": "b20f7b252cd6765ee68e66f8b3093a230ad97608"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
-                "reference": "9ce17fb70e9a38dd8acff0636a29f5cf4d575c1b",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b20f7b252cd6765ee68e66f8b3093a230ad97608",
+                "reference": "b20f7b252cd6765ee68e66f8b3093a230ad97608",
                 "shasum": ""
             },
             "require": {
@@ -246,7 +246,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -290,6 +290,7 @@
                 "RadPHP",
                 "SMF",
                 "Thelia",
+                "Whmcs",
                 "WolfCMS",
                 "agl",
                 "aimeos",
@@ -317,15 +318,18 @@
                 "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
                 "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
                 "reindex",
                 "roundcube",
                 "shopware",
@@ -338,7 +342,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-08-09T07:53:48+00:00"
+            "time": "2018-10-10T11:17:18+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -483,12 +487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/RobLoach/component-installer.git",
-                "reference": "59f93ece022f1b5c3576de139964975561af980a"
+                "reference": "cf4ec3219b3e93dbfb10cc22c6604c6c764ce4aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/59f93ece022f1b5c3576de139964975561af980a",
-                "reference": "59f93ece022f1b5c3576de139964975561af980a",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/cf4ec3219b3e93dbfb10cc22c6604c6c764ce4aa",
+                "reference": "cf4ec3219b3e93dbfb10cc22c6604c6c764ce4aa",
                 "shasum": ""
             },
             "require": {
@@ -523,7 +527,7 @@
                 }
             ],
             "description": "Allows installation of Components via Composer.",
-            "time": "2016-07-16T01:43:54+00:00"
+            "time": "2018-05-14T07:51:05+00:00"
         },
         {
             "name": "select2/select2",
@@ -552,12 +556,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "5126fc58beb624763383c178779845bbd04c35ab"
+                "reference": "35c2914a9f50519bd207164c353ae4d59182c2cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/5126fc58beb624763383c178779845bbd04c35ab",
-                "reference": "5126fc58beb624763383c178779845bbd04c35ab",
+                "url": "https://api.github.com/repos/symfony/process/zipball/35c2914a9f50519bd207164c353ae4d59182c2cb",
+                "reference": "35c2914a9f50519bd207164c353ae4d59182c2cb",
                 "shasum": ""
             },
             "require": {
@@ -593,7 +597,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-10-05T22:24:36+00:00"
+            "time": "2018-10-14T17:33:21+00:00"
         },
         {
             "name": "webcreate/infinite-ajax-scroll",

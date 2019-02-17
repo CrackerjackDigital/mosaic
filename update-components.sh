@@ -16,6 +16,6 @@ rm -vfr vendor/* components/*
 echo "please don't build me SilverStripe" > vendor/_manifest_exclude
 export COMPOSER=components.json;
 echo "3/3: updating components using $COMPOSER"
-composer update --prefer-dist --no-dev
+composer update --prefer-dist --no-dev $@
 cd -
 echo "done"
